@@ -88,14 +88,24 @@ header {
     padding: rhythm(.5) rhythm();
 }
 
+#header-main{
+  #site-title{
+
+      font-size: rhythm(1);
+      line-height: rhythm(1.2);
+
+  }
+}
+
 header h1 {
     margin-bottom: 0;
+
 }
 
 #top-nav > ul {
     display: block;
     overflow: scroll;
-    padding-bottom: rhythm(4);
+    padding-bottom: rhythm();
 }
 
 #top-nav ul ul ul li {

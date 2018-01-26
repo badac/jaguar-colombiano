@@ -44,22 +44,32 @@
 
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
-            <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
-
-            <div id="search-container" role="search">
-                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-                <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                <?php else: ?>
-                <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                <?php endif; ?>
-                <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+            <div id="header-logos">
+                <img id="badac-logo" src="<?php echo img('logoBADACweb-sm.png','img'); ?>">
+                <img  id="andes-logo" src="<?php echo img('facartes_web2.png','img'); ?>">
             </div>
 
+            <div id="header-main">
+              <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
+              <div id="header-buttons">
+                <div id="search-container" role="search">
+                    <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+                    <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
+                    <?php else: ?>
+                    <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
+                    <?php endif; ?>
+                    <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+                </div>
 
-            <nav id="top-nav" role="navigation" class="closed">
-                <button type="button" class="menu-toggle" aria-label="<?php echo __('Toggle menu'); ?>"></button>
-                <?php echo public_nav_main(); ?>
-            </nav>
+
+                <nav id="top-nav" role="navigation" class="closed">
+                    <button type="button" class="menu-toggle" aria-label="<?php echo __('Toggle menu'); ?>"></button>
+                    <?php echo public_nav_main(); ?>
+                </nav>
+              </div>
+
+            </div>
+
 
         </header>
 
