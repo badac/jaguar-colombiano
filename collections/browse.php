@@ -3,7 +3,7 @@ $pageTitle = __('Browse Collections');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 
-<h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h1>
+<h2 class="browse-title"><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h2>
 <?php echo pagination_links(); ?>
 
 <?php

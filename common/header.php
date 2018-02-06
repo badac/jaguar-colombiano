@@ -46,7 +46,7 @@
 
             <div id="header-logos">
                 <img id="badac-logo" src="<?php echo img('logoBADACweb-sm.png','img'); ?>">
-                <img  id="andes-logo" src="<?php echo img('facartes_web2.png','img'); ?>">
+                <img  id="andes-logo" src="<?php echo img('firma_facartes_negro_web.png','img'); ?>">
             </div>
 
             <div id="header-main">

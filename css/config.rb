@@ -2,6 +2,7 @@ require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 require 'susy'
 require 'autoprefixer-rails'
+# require 'font-awesome-sass'
 
 on_stylesheet_saved do |file|
   css = File.read(file)
