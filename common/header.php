@@ -41,12 +41,18 @@
     <div id="wrap">
 
         <header role="banner">
+        
+          <?php echo jaguar_header_background(); ?>
 
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
             <div id="header-logos">
-                <img id="badac-logo" src="<?php echo img('logoBADACweb-sm.png','img'); ?>">
-                <img  id="andes-logo" src="<?php echo img('firma_facartes_negro_web.png','img'); ?>">
+              <a href="https://badac.uniandes.edu.co" target="_blank">
+                <img id="badac-logo" src="<?php echo img('logowebblanco-01.png','img'); ?>">
+              </a>
+              <a href="https://facartes.uniandes.edu.co/" target="_blank">
+                <img  id="andes-logo" src="<?php echo img('facartes_web.png','img'); ?>">
+              </a>
             </div>
 
             <div id="header-main">
@@ -73,7 +79,6 @@
 
         </header>
 
-        <?php echo theme_header_image(); ?>
 
         <article id="content" role="main">
 

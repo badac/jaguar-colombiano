@@ -36,4 +36,16 @@ function thedaily_featured_count() {
     return $count;
 }
 
+
+function jaguar_header_background()
+{
+    $headerBg = get_theme_option('Header Background');
+    if ($headerBg) {
+        $storage = Zend_Registry::get('storage');
+        $headerBg = $storage->getUri($storage->getPathByType($headerBg, 'theme_uploads'));
+        return '<style type="text/css" media="screen">header {'
+           . 'background:transparent url("' . $headerBg . '") center center / cover no-repeat;'
+           . '}</style>';
+    }
+}
 ?>
