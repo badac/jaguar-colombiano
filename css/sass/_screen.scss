@@ -876,58 +876,79 @@ footer {
 }
 
 .records {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    width: 100%;
-    margin: rhythm() 0 0;
-}
-
-.records h2 {
-    width: 100%;
-    font-size: rhythm(.8);
-    text-align: left;
-}
-
-.records .hentry {
-    font-size: .75 * $scalable-font-size;
-    line-height: .75 * $scalable-line-height;
-    width: calc(25% - #{rhythm()});
-    //width:
-    margin: rhythm() rhythm() rhythm(2) 0;
-    text-align: center;
-    &:nth-child(4n) {
-        margin-right: 0;
-    }
-    a{
-      margin: 0 auto;
+    //display: flex;
+    //flex-wrap: wrap;
+    //justify-content: flex-start;
+    //align-content: flex-start;
+    //width: 100%;
+    //margin: rhythm() 0 0;
+    @media screen and (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-lg){
+      column-count: 3;
     }
 
-    img {
+
+    @media screen and ( max-width: $breakpoint-sm){
+      column-count: 2;
+    }
+
+    column-count: 4;
+    column-gap: 1em;
+
+    h2 {
         width: 100%;
-        height: auto;
+        font-size: rhythm(.8);
+        text-align: left;
     }
-    .view-items-link{
-      text-align: left;
-    }
+
+    .hentry {
+        display: inline-block;
+
+        font-size: .75 * $scalable-font-size;
+        line-height: .75 * $scalable-line-height;
+        //width: calc(25% - #{rhythm()});
+        width: 100%;
+        margin: rhythm() rhythm() rhythm(1) 0;
+        text-align: left;
+        background-color: $gris-claro;
+
+        a{
+          margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .view-items-link{
+          text-align: left;
+        }
+
+        .item-info,
+        .collection-info{
+          margin: rhythm(1);
+          h4 {
+            margin:0;
+            text-align: left;
+            font-size: rhythm(.7);
+            line-height: rhythm(.9);
+            font-weight: bold;
+            margin-top: rhythm();
+          }
+          .date{
+            font-size: rhythm(.6);
+            line-height: rhythm(.7);
+
+          }
+          .collection-description{
+            font-size: rhythm(.7);
+            line-height: rhythm(.9);
+          }
+        }
+
+  }
 }
 
 
-
-.records .hentry h4 {
-    margin: 0;
-    text-align: left;
-    font-size: rhythm(.8);
-    font-weight: bold;
-    margin-top: rhythm();
-}
-
-.records .hentry .date {
-    display: block;
-    text-align: left;
-    margin-top: rhythm();
-}
 
 .browse #outputs {
     width: 100%;
@@ -942,15 +963,6 @@ footer {
     display: inline-block
 }
 
-.collection.hentry h2 {
-    font-size: $scalable-font-size;
-    line-height: $scalable-line-height;
-    margin: (.5 * $scalable-font-size) 0 0;
-}
-
-h2.browse-title{
-  width: 100%;
-}
 
 /* @end */
 

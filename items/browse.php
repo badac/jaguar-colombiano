@@ -36,16 +36,20 @@ $sortLinks[__('Date Added')] = 'added';
         </div>
         <?php endif; ?>
 
-        <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h4>
+        <div class="item-info">
+          <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h4>
 
-        <?php if ($creator = metadata('item', array('Dublin Core', 'Creator'))): ?>
-        <span class="creator"><?php echo $creator; ?></span>
-        <?php endif; ?>
-        <?php if ($date = metadata('item', array('Dublin Core', 'Date'))): ?>
-        <span class="date"><?php echo $date; ?></span>
-        <?php endif; ?>
+          <?php if ($creator = metadata('item', array('Dublin Core', 'Creator'))): ?>
+          <span class="creator"><?php echo $creator; ?></span>
+          <?php endif; ?>
+          <?php if ($date = metadata('item', array('Dublin Core', 'Date'))): ?>
+          <span class="date"><?php echo $date; ?></span>
+          <?php endif; ?>
 
-        <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
+          <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
+
+        </div>
+
 
         </div><!-- end class="item-meta" -->
     </div><!-- end class="item hentry" -->
