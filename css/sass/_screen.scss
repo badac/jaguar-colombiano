@@ -6,8 +6,10 @@
 
 html {
     font-family: $body-font;
-    font-size: $scalable-font-size;
-    line-height: $scalable-line-height;
+    //font-size: $scalable-font-size;
+    //line-height: $scalable-line-height;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
     margin: 0;
     padding: 0;
     font-weight: 200;
@@ -17,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $heading-font;
     font-weight: normal;
 }
-
+/*
 h1 {
     font-size: 1.75 * $scalable-font-size;
     line-height: 2 * $scalable-line-height;
@@ -39,6 +41,43 @@ h3 {
 h4 {
     margin: rhythm() 0;
 }
+*/
+
+h1{
+  @include adjust-font-size-to( $h1-fz);
+  @include adjust-leading-to(3,$base-font-size);
+
+}
+
+h2{
+  @include adjust-font-size-to($h2-fz);
+  @include adjust-leading-to(3,$base-font-size);
+
+}
+
+h3{
+  @include adjust-font-size-to($h3-fz);
+  @include adjust-leading-to(2,$base-font-size);
+
+}
+
+h4{
+  @include adjust-font-size-to($h4-fz);
+  @include adjust-leading-to(2,$base-font-size);
+
+}
+
+h5{
+  @include adjust-font-size-to($h5-fz);
+  @include adjust-leading-to(1,$base-font-size);
+
+}
+
+h6{
+  @include adjust-font-size-to($h6-fz);
+  @include adjust-leading-to(1,$base-font-size);
+
+}
 
 a {
     text-decoration: none;
@@ -48,11 +87,19 @@ a {
 p a,
 span a {
     background-color: $primary-color;
+    padding: 0 .5em;
+
 }
 
 p,
 ul {
     margin: rhythm() 0;
+    @include adjust-font-size-to($base-font-size);
+    @include adjust-leading-to(1,$base-font-size);
+    //line-height: rhythm(1);
+    text-align: justify;
+    text-justify: distribute;
+
 }
 
     /* @group ----- Form Elements ----- */
@@ -289,7 +336,8 @@ header {
     //background-repeat: no-repeat;
     //background-position: center;
     //background-size: cover;
-    min-height: 512px;
+    //min-height: 512px;
+    min-height: rhythm(21);
 }
 
 header > * {
@@ -337,7 +385,8 @@ header a {
   margin: rhythm(.8) 0;
   //width: 100%;
   #site-title {
-      font-family: $heading-font;
+      //font-family: $heading-font;
+      font-family: "raleway-semibold";
       margin-right: auto;
       padding: 0;
       font-size: rhythm(2.4);
@@ -508,6 +557,7 @@ header a {
 .section-title{
   text-align: center;
   margin: rhythm(5) 0 rhythm(3) 0;
+
 }
 
 
@@ -596,8 +646,8 @@ div#featured {
     //margin-top: rhythm(2);
     margin-left: span(2) + gutter();
     //padding: rhythm(2);
-    font-size: rhythm(.8);
-    line-height: rhythm(1.2);
+    //font-size: rhythm(.8);
+    //line-height: rhythm(1);
     width: span(8);
 }
 
@@ -614,7 +664,8 @@ div#featured-collection {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: rhythm(4) 0;
+    //padding: rhythm(4) 0;
+    margin: rhythm(4) 0;
     h1, h2, h3{
       width: 100%;
       clear: both;
@@ -653,19 +704,15 @@ div#featured-collection {
           //  transition: opacity .2s ease-in-out;
       }
       .featured-meta {
-          //padding: 0 rhythm();
-          max-width: 75%;
+          //padding: rhythm(1) 0;
+          //max-width: 75%;
       }
 
       .featured-meta > * {
-          padding-top: rhythm(.5);
+          //padding-top: rhythm(.5);
           margin: 0;
           //background-color: #000;
           display: inline-block;
-      }
-
-      .featured-meta h3 {
-          //background-color: $primary-color;
       }
 
       .featured-meta h3 a {
@@ -681,7 +728,7 @@ div#featured-collection {
   width: 100%;
   clear: both;
   text-align: left;
-  padding-bottom: rhythm(1.6);
+  padding-bottom: rhythm(2);
 }
 
 #featured-items  {
@@ -750,12 +797,15 @@ div#featured-collection {
   }
   .featured-meta {
     width: 100%;
-    padding: rhythm(.2) rhythm(.6) rhythm(.2) rhythm(1);
+    //padding: rhythm(.2) rhythm(.6) rhythm(.2) rhythm(1);
+    padding: 0 rhythm(.5);
     h3{
-      margin-top: rhythm(.4);
-      font-size: rhythm(.7);
-      line-height: rhythm(.9);
-      font-weight: bold;
+      //margin-top: rhythm(.4);
+      //font-size: rhythm(.7);
+      //line-height: rhythm(.9);
+      //font-weight: bold;
+      @include adjust-font-size-to($h5-fz);
+      @include adjust-leading-to(1, $h5-fz) ;
       a {
         color: #000;
 
@@ -777,18 +827,19 @@ div#featured-collection {
 
 footer {
   text-align: center;
-    padding: rhythm(5) rhythm(2) rhythm();
-    clear: both;
-    .to_top{
-        display: block;
-        text-align: center;
-      a{
-        background-color: $primary-color;
-        font-size: rhythm(.8);
-      }
+  padding: rhythm(5) rhythm(2) rhythm();
+  clear: both;
+  .to_top{
+      display: block;
+      text-align: center;
+    a{
+      background-color: $primary-color;
+      //font-size: rhythm(.8);
     }
+  }
     #custom-footer-text{
       font-size: rhythm(1);
+      text-align: center;
     }
     #powered_by{
       font-size: rhythm(.7);
@@ -797,6 +848,7 @@ footer {
     .footer-links{
       display: block;
       margin: 0 auto;
+      text-align: center;
       li{
         font-size: rhythm(.8);
         list-style-type: none;
@@ -807,10 +859,12 @@ footer {
     }
 
     .footer-legal{
+      text-align: center;
+
       li{
-        font-size: rhythm(.6);
+        //font-size: rhythm(.6);
         list-style-type: none;
-        line-height: rhythm(1.1);
+        //line-height: rhythm(1.1);
       }
     }
 
@@ -969,9 +1023,9 @@ footer {
 /* @group ----- Show ----- */
 
 .element-set{
-  h2{
-    font-size: rhythm(1.4);
-  }
+  width: span(8) + gutter();
+  margin-left: span(2) + gutter();
+  margin-right: span(2);
 }
 
 .chocolat-overlay {
@@ -998,26 +1052,75 @@ footer {
 #itemfiles-nav img {
     height: 100%;
 }
-
+.collection,
 .element {
     margin-bottom: rhythm();
     vertical-align: top;
     overflow: hidden;
+    dt{
+      margin: 0;
+      width: 50%;
+      clear: left;
+      float: left;
+      text-align: right;
+      font-family: 'raleway-semibold';
+      @include adjust-font-size-to($h4-fz);
+      @include adjust-leading-to(1,$h4-fz);
+      padding-right: 3em;
+    }
+    dd{
+      margin: 0;
+      width: 50%;
+      float:left;
+
+      @include adjust-font-size-to($h5-fz);
+      @include adjust-leading-to(1,$h4-fz);
+    }
 }
 
-.element h3 {
-    font-size: $scalable-font-size;
-    width: 25%;
-    margin: 0;
-    display: block;
-    text-align: right;
-    float: left;
-    word-break: break-word;
-}
+  #item-output-formats,
+  #item-citation{
+    //font-size: $scalable-font-size;
+    //width: 25%;
+    h3{
+      //width: 25%;
+      margin: 0;
+      display: block;
+      text-align: right;
+      float: left;
+      word-break: break-word;
+      padding-right: 1em;
+    }
+
+    .free-element{
+      //width: 75%;
+      float: left;
+      @include adjust-leading-to(2,$h3-fz);
+
+      //clear: right;
+      #output-format-list {
+          margin: 0;
+          list-style-type: none;
+          @include adjust-leading-to(2,$h3-fz);
+          li{
+            display: inline-block;
+            margin: 0 .5em;
+            a {
+                background-color: $primary-color;
+                padding: 0 .25em;
+
+            }
+          }
+        }
+    }
+  }
+
+
+
 
 .element-text {
     display: block;
-    width: calc(75% - #{rhythm()});
+    width: 100%;
     height: auto;
     text-align: left;
     float: right;
@@ -1038,10 +1141,8 @@ footer {
 
 .element-text a {
     background-color: $primary-color;
-}
+    padding: 0 .5em;
 
-.show #output-format-list {
-    margin: 0;
 }
 
 /* @end */

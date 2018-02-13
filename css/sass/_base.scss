@@ -1,21 +1,31 @@
 //Typography
 
-    //Used for managing margins and padding
-    $base-font-size: 18px;
-    $base-line-height: 24px;
-    $rhythm-unit: "px";
+@import "compass/css3";
+@include font-face("raleway-light", font-files("raleway/Raleway-Light.ttf", "truetype"));
+@include font-face("raleway-reg", font-files("raleway/Raleway-Regular.ttf", "truetype"));
+@include font-face("raleway-semibold", font-files("raleway/Raleway-SemiBold.ttf", "truetype"));
+@include font-face("raleway-bold", font-files("raleway/Raleway-Bold.ttf", "truetype"));
+//Used for managing margins and padding
+$base-font-size: 16px;
+$base-line-height: 24px;
+$rhythm-unit: "px";
 
-    //Used for text
-    $scalable-font-size: 3vmin;
-    $scalable-line-height: 4.5vmin;
+//Used for text
+$scalable-font-size: 3vmin;
+$scalable-line-height: 4.5vmin;
 
-    //$heading-font: "Archivo Black", sans-serif;
-    $heading-font:'Raleway', sans-serif;
-    //$body-font: "Assistant", sans-serif;
-    $body-font: 'Raleway', sans-serif;
+//$heading-font:'Raleway', sans-serif;
+$heading-font:'raleway-semibold', sans-serif;
+//$body-font: "Assistant", sans-serif;
+$body-font: 'raleway-light', sans-serif;
 
 
-
+$h1-fz: 48px;
+$h2-fz: 32px;
+$h3-fz: 24px;
+$h4-fz: 20px;
+$h5-fz: 16px;
+$h6-fz: 12px;
 //Colors
 
 $ocre: #ffc333;
@@ -36,6 +46,12 @@ $susy: (
   math: fluid,
   output: float,
   gutter-position: inside,
+  debug: (
+   image: show-baseline,
+   color: blue,
+   output: overlay,
+   toggle: top right,
+ ),
 );
 
 

@@ -449,6 +449,22 @@ textarea {
   /* 2 */
 }
 
+@font-face {
+  font-family: "raleway-light";
+  src: url('../fonts/raleway/Raleway-Light.ttf?1506715057') format('truetype');
+}
+@font-face {
+  font-family: "raleway-reg";
+  src: url('../fonts/raleway/Raleway-Regular.ttf?1506715057') format('truetype');
+}
+@font-face {
+  font-family: "raleway-semibold";
+  src: url('../fonts/raleway/Raleway-SemiBold.ttf?1506715057') format('truetype');
+}
+@font-face {
+  font-family: "raleway-bold";
+  src: url('../fonts/raleway/Raleway-Bold.ttf?1506715057') format('truetype');
+}
 @media screen {
   /* @group ----- Generic HTML Elements ----- */
   /* line 3, sass/_screen.scss */
@@ -459,98 +475,143 @@ textarea {
 
   /* line 7, sass/_screen.scss */
   html {
-    font-family: "Raleway", sans-serif;
-    font-size: 3vmin;
-    line-height: 4.5vmin;
+    font-family: "raleway-light", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
     margin: 0;
     padding: 0;
     font-weight: 200;
   }
 
-  /* line 16, sass/_screen.scss */
+  /* line 18, sass/_screen.scss */
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     font-weight: normal;
   }
 
-  /* line 21, sass/_screen.scss */
+  /*
   h1 {
-    font-size: 5.25vmin;
-    line-height: 9vmin;
-    margin: 0 0 24px;
+      font-size: 1.75 * $scalable-font-size;
+      line-height: 2 * $scalable-line-height;
+      margin: 0 0 rhythm(1, 1.75 * $scalable-font-size);
   }
-
-  /* line 27, sass/_screen.scss */
+  
   h2 {
-    font-size: 4.5vmin;
-    line-height: 9vmin;
-    margin: 24px 0;
+      font-size: 1.5 * $scalable-font-size;
+      line-height: 2 * $scalable-line-height;
+      margin: rhythm(1, 1.5 * $base-font-size) 0;
   }
-
-  /* line 33, sass/_screen.scss */
+  
   h3 {
-    font-size: 3.75vmin;
-    line-height: 4.5vmin;
-    margin: 24px 0;
+      font-size: 1.25 * $scalable-font-size;
+      line-height: $scalable-line-height;
+      margin: rhythm(1, 1.25 * $base-font-size) 0;
   }
-
-  /* line 39, sass/_screen.scss */
+  
   h4 {
-    margin: 24px 0;
+      margin: rhythm() 0;
+  }
+  */
+  /* line 46, sass/_screen.scss */
+  h1 {
+    font-size: 48px;
+    line-height: 72px;
+    line-height: 72px;
   }
 
-  /* line 43, sass/_screen.scss */
+  /* line 52, sass/_screen.scss */
+  h2 {
+    font-size: 32px;
+    line-height: 48px;
+    line-height: 72px;
+  }
+
+  /* line 58, sass/_screen.scss */
+  h3 {
+    font-size: 24px;
+    line-height: 48px;
+    line-height: 48px;
+  }
+
+  /* line 64, sass/_screen.scss */
+  h4 {
+    font-size: 20px;
+    line-height: 24px;
+    line-height: 48px;
+  }
+
+  /* line 70, sass/_screen.scss */
+  h5 {
+    font-size: 16px;
+    line-height: 24px;
+    line-height: 24px;
+  }
+
+  /* line 76, sass/_screen.scss */
+  h6 {
+    font-size: 12px;
+    line-height: 24px;
+    line-height: 24px;
+  }
+
+  /* line 82, sass/_screen.scss */
   a {
     text-decoration: none;
     color: #000;
   }
 
-  /* line 48, sass/_screen.scss */
+  /* line 87, sass/_screen.scss */
   p a,
   span a {
     background-color: #ffc333;
+    padding: 0 .5em;
   }
 
-  /* line 53, sass/_screen.scss */
+  /* line 94, sass/_screen.scss */
   p,
   ul {
     margin: 24px 0;
+    font-size: 16px;
+    line-height: 24px;
+    line-height: 24px;
+    text-align: justify;
+    text-justify: distribute;
   }
 
   /* @group ----- Form Elements ----- */
-  /* line 60, sass/_screen.scss */
+  /* line 107, sass/_screen.scss */
   fieldset {
     border: 0;
     padding: 0;
   }
 
-  /* line 65, sass/_screen.scss */
+  /* line 112, sass/_screen.scss */
   input,
   textarea,
   button,
   select {
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-light", sans-serif;
     font-size: 3vmin;
     line-height: 1;
     margin: 0;
     border-radius: 0;
   }
 
-  /* line 76, sass/_screen.scss */
+  /* line 123, sass/_screen.scss */
   select {
     width: 100%;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
     padding: 6px 30px 6px 12px;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-light", sans-serif;
     border: 1px solid #ccc;
     border-radius: 3px;
     background: #fff url("../img/select-arrow.svg") right 12px center no-repeat;
     background-size: 1.5vmin;
   }
 
-  /* line 87, sass/_screen.scss */
+  /* line 134, sass/_screen.scss */
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -569,7 +630,7 @@ textarea {
     border-radius: 0;
   }
 
-  /* line 103, sass/_screen.scss */
+  /* line 150, sass/_screen.scss */
   .button,
   button,
   input[type="submit"] {
@@ -579,22 +640,22 @@ textarea {
     padding: 6px 12px;
     background-color: #ffc333;
     border: 3px solid #000;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     cursor: pointer;
   }
 
-  /* line 114, sass/_screen.scss */
+  /* line 161, sass/_screen.scss */
   [type="submit"] {
     margin: 24px 0;
   }
 
-  /* line 118, sass/_screen.scss */
+  /* line 165, sass/_screen.scss */
   input[type="radio"],
   input[type="checkbox"] {
     margin-right: 6px;
   }
 
-  /* line 124, sass/_screen.scss */
+  /* line 171, sass/_screen.scss */
   form .field {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -604,20 +665,20 @@ textarea {
     margin-bottom: 24px;
   }
 
-  /* line 130, sass/_screen.scss */
+  /* line 177, sass/_screen.scss */
   form .field label,
   form .field .label {
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     vertical-align: top;
     padding-top: 6px;
   }
 
-  /* line 137, sass/_screen.scss */
+  /* line 184, sass/_screen.scss */
   form .field .explanation {
     margin-bottom: 6px;
   }
 
-  /* line 141, sass/_screen.scss */
+  /* line 188, sass/_screen.scss */
   form .field .two.columns,
   form .field > label,
   form .field > .label {
@@ -625,14 +686,14 @@ textarea {
     padding-right: 12px;
   }
 
-  /* line 148, sass/_screen.scss */
+  /* line 195, sass/_screen.scss */
   form .field .five.columns,
   form .field > .inputs {
     width: 66.66667%;
     padding-left: 12px;
   }
 
-  /* line 154, sass/_screen.scss */
+  /* line 201, sass/_screen.scss */
   form .field > input[type="checkbox"] + label {
     width: auto;
     margin: 0 0 0 6px;
@@ -640,7 +701,7 @@ textarea {
 
   /* @end */
   /* @group ----- Tables ----- */
-  /* line 163, sass/_screen.scss */
+  /* line 210, sass/_screen.scss */
   table {
     margin: 48px 0;
     width: 100%;
@@ -648,20 +709,20 @@ textarea {
     border-spacing: 3px;
   }
 
-  /* line 170, sass/_screen.scss */
+  /* line 217, sass/_screen.scss */
   th:not(:empty) {
     background-color: #000;
     color: #ccc;
     text-align: left;
   }
 
-  /* line 176, sass/_screen.scss */
+  /* line 223, sass/_screen.scss */
   td,
   th {
     padding: 6px 12px;
   }
 
-  /* line 181, sass/_screen.scss */
+  /* line 228, sass/_screen.scss */
   td {
     background-color: #f7f7f7;
   }
@@ -669,77 +730,77 @@ textarea {
   /* @end */
   /* @end */
   /* @group ----- Navigation ----- */
-  /* line 191, sass/_screen.scss */
+  /* line 238, sass/_screen.scss */
   nav ul {
     list-style: none;
     padding-left: 0;
   }
 
-  /* line 196, sass/_screen.scss */
+  /* line 243, sass/_screen.scss */
   nav li {
     list-style-type: none;
     display: inline-block;
   }
 
-  /* line 201, sass/_screen.scss */
+  /* line 248, sass/_screen.scss */
   .secondary-nav ul {
     margin: 0 0 24px;
   }
 
-  /* line 205, sass/_screen.scss */
+  /* line 252, sass/_screen.scss */
   .secondary-nav li {
     display: inline-block;
   }
 
-  /* line 209, sass/_screen.scss */
+  /* line 256, sass/_screen.scss */
   .secondary-nav li a {
     background-color: #ffc333;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     color: #000;
     padding: 6px 12px;
     font-size: 2.25vmin;
   }
 
-  /* line 217, sass/_screen.scss */
+  /* line 264, sass/_screen.scss */
   .pagination {
     font-size: 2.25vmin;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     margin: 0 0 24px;
   }
 
-  /* line 223, sass/_screen.scss */
+  /* line 270, sass/_screen.scss */
   .pagination input[type="text"] {
     border: 2px solid #000;
     width: 48px;
     text-align: center;
     height: 30px;
-    font-family: "Raleway", sans-serif;
-    font-size: 13.5px;
+    font-family: "raleway-semibold", sans-serif;
+    font-size: 12px;
   }
 
-  /* line 232, sass/_screen.scss */
+  /* line 279, sass/_screen.scss */
   .pagination a {
     background-color: #ffc333;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     color: #000;
     padding: 6px 12px;
   }
 
-  /* line 239, sass/_screen.scss */
+  /* line 286, sass/_screen.scss */
   .pagination_previous a:before {
     content: "";
     font-family: "FontAwesome";
     margin: 0 6px;
   }
 
-  /* line 245, sass/_screen.scss */
+  /* line 292, sass/_screen.scss */
   .pagination_next a:before {
     content: "";
     font-family: "FontAwesome";
     margin: 0 6px;
   }
 
-  /* line 251, sass/_screen.scss */
+  /* line 298, sass/_screen.scss */
   .item-pagination {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -749,11 +810,11 @@ textarea {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     font-size: 2.25vmin;
   }
 
-  /* line 259, sass/_screen.scss */
+  /* line 306, sass/_screen.scss */
   .item-pagination a {
     background-color: #ffc333;
     padding: 6px 12px;
@@ -761,17 +822,17 @@ textarea {
 
   /* @end */
   /* @group ----- Header ----- */
-  /* line 268, sass/_screen.scss */
+  /* line 315, sass/_screen.scss */
   #wrap {
     position: relative;
   }
 
-  /* line 272, sass/_screen.scss */
+  /* line 319, sass/_screen.scss */
   #skipnav {
     display: none;
   }
 
-  /* line 278, sass/_screen.scss */
+  /* line 325, sass/_screen.scss */
   header {
     padding: 5px 48px;
     position: relative;
@@ -785,59 +846,59 @@ textarea {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    min-height: 512px;
+    min-height: 504px;
   }
 
-  /* line 295, sass/_screen.scss */
+  /* line 343, sass/_screen.scss */
   header > * {
     vertical-align: top;
   }
 
-  /* line 299, sass/_screen.scss */
+  /* line 347, sass/_screen.scss */
   header a {
     color: #fff;
   }
 
-  /* line 304, sass/_screen.scss */
+  /* line 352, sass/_screen.scss */
   #header-image {
     width: 100%;
     margin: 0;
     display: block;
   }
 
-  /* line 311, sass/_screen.scss */
+  /* line 359, sass/_screen.scss */
   #header-image img {
     width: 100%;
     height: auto;
     vertical-align: bottom;
   }
 
-  /* line 317, sass/_screen.scss */
+  /* line 365, sass/_screen.scss */
   #header-logos {
     width: 100%;
     margin: 19px 0;
   }
-  /* line 321, sass/_screen.scss */
+  /* line 369, sass/_screen.scss */
   #header-logos img {
     max-height: 50px;
   }
-  /* line 324, sass/_screen.scss */
+  /* line 372, sass/_screen.scss */
   #header-logos #badac-logo {
     float: left;
   }
-  /* line 327, sass/_screen.scss */
+  /* line 375, sass/_screen.scss */
   #header-logos #andes-logo {
     margin-left: auto;
     float: right;
   }
 
-  /* line 334, sass/_screen.scss */
+  /* line 382, sass/_screen.scss */
   #header-main {
     margin: 19px 0;
   }
-  /* line 339, sass/_screen.scss */
+  /* line 387, sass/_screen.scss */
   #header-main #site-title {
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold";
     margin-right: auto;
     padding: 0;
     font-size: 57px;
@@ -845,26 +906,26 @@ textarea {
     float: left;
     font-weight: bold;
   }
-  /* line 347, sass/_screen.scss */
+  /* line 396, sass/_screen.scss */
   #header-main #site-title img {
     max-height: 48px;
     width: auto;
     vertical-align: bottom;
   }
-  /* line 353, sass/_screen.scss */
+  /* line 402, sass/_screen.scss */
   #header-main #header-buttons {
     float: right;
   }
-  /* line 356, sass/_screen.scss */
+  /* line 405, sass/_screen.scss */
   #header-main #header-buttons #search-container {
     float: left;
   }
-  /* line 359, sass/_screen.scss */
+  /* line 408, sass/_screen.scss */
   #header-main #header-buttons #top-nav {
     float: right;
   }
 
-  /* line 367, sass/_screen.scss */
+  /* line 416, sass/_screen.scss */
   #top-nav .menu-toggle,
   .search-toggle {
     background-color: transparent;
@@ -873,19 +934,19 @@ textarea {
     border: 0;
   }
 
-  /* line 378, sass/_screen.scss */
+  /* line 427, sass/_screen.scss */
   #top-nav .menu-toggle:before {
     content: "";
     font-family: "FontAwesome";
   }
 
-  /* line 383, sass/_screen.scss */
+  /* line 432, sass/_screen.scss */
   .search-toggle:before {
     content: "";
     font-family: "FontAwesome";
   }
 
-  /* line 388, sass/_screen.scss */
+  /* line 437, sass/_screen.scss */
   #search-form,
   #top-nav > ul {
     position: absolute;
@@ -905,7 +966,7 @@ textarea {
             order: 1;
   }
 
-  /* line 405, sass/_screen.scss */
+  /* line 454, sass/_screen.scss */
   #top-nav > ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -918,56 +979,56 @@ textarea {
         flex-wrap: wrap;
   }
 
-  /* line 411, sass/_screen.scss */
+  /* line 460, sass/_screen.scss */
   #search-form.closed,
   #top-nav.closed > ul {
     display: none;
   }
 
-  /* line 416, sass/_screen.scss */
+  /* line 465, sass/_screen.scss */
   #top-nav li {
     list-style-type: none;
   }
 
-  /* line 420, sass/_screen.scss */
+  /* line 469, sass/_screen.scss */
   #top-nav > ul > li {
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     padding-bottom: 24px;
     width: 30%;
   }
 
-  /* line 426, sass/_screen.scss */
+  /* line 475, sass/_screen.scss */
   #top-nav > ul > li > a {
     color: #ffc333;
   }
 
-  /* line 430, sass/_screen.scss */
+  /* line 479, sass/_screen.scss */
   #top-nav > ul > li li {
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-light", sans-serif;
   }
-  /* line 433, sass/_screen.scss */
+  /* line 482, sass/_screen.scss */
   #top-nav > ul > li li:not(:last-of-type) {
     margin-bottom: 12px;
   }
 
-  /* line 438, sass/_screen.scss */
+  /* line 487, sass/_screen.scss */
   #top-nav ul ul {
     padding-left: 0;
     margin: 12px 0 0;
   }
 
-  /* line 443, sass/_screen.scss */
+  /* line 492, sass/_screen.scss */
   #top-nav ul ul ul li {
     font-size: 2.25vmin;
     line-height: 3.375vmin;
   }
-  /* line 447, sass/_screen.scss */
+  /* line 496, sass/_screen.scss */
   #top-nav ul ul ul li:before {
     content: "\2014";
     margin-right: 6px;
   }
 
-  /* line 453, sass/_screen.scss */
+  /* line 502, sass/_screen.scss */
   #search-form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -983,7 +1044,7 @@ textarea {
     padding-top: 20vh;
   }
 
-  /* line 461, sass/_screen.scss */
+  /* line 510, sass/_screen.scss */
   #search-form input[type="text"] {
     border: 0;
     border-bottom: 3px solid #fff;
@@ -997,7 +1058,7 @@ textarea {
     padding: 0;
   }
 
-  /* line 474, sass/_screen.scss */
+  /* line 523, sass/_screen.scss */
   ::-webkit-input-placeholder {
     font-style: italic;
   }
@@ -1011,7 +1072,7 @@ textarea {
     font-style: italic;
   }
 
-  /* line 478, sass/_screen.scss */
+  /* line 527, sass/_screen.scss */
   #search-form button[type="submit"] {
     background-color: transparent;
     border: 3px solid #fff;
@@ -1029,7 +1090,7 @@ textarea {
             order: 2;
   }
 
-  /* line 493, sass/_screen.scss */
+  /* line 542, sass/_screen.scss */
   #advanced-form {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
@@ -1039,21 +1100,21 @@ textarea {
     display: flex;
   }
 
-  /* line 498, sass/_screen.scss */
+  /* line 547, sass/_screen.scss */
   #advanced-form fieldset,
   #advanced-form p:last-child {
     margin: 0 24px;
   }
 
   /* @end */
-  /* line 508, sass/_screen.scss */
+  /* line 557, sass/_screen.scss */
   .section-title {
     text-align: center;
     margin: 120px 0 72px 0;
   }
 
   /* @group ----- Home ----- */
-  /* line 515, sass/_screen.scss */
+  /* line 565, sass/_screen.scss */
   div#featured {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1068,13 +1129,13 @@ textarea {
     background-repeat: no-repeat;
   }
 
-  /* line 526, sass/_screen.scss */
+  /* line 576, sass/_screen.scss */
   #featured h1, #featured h2, #featured h3 {
     width: 100%;
     clear: both;
   }
 
-  /* line 531, sass/_screen.scss */
+  /* line 581, sass/_screen.scss */
   #featured .record:first-child,
   #featured.layout-2 .record:nth-child(2),
   #featured .record:nth-child(6n),
@@ -1082,7 +1143,7 @@ textarea {
     width: 100%;
   }
 
-  /* line 538, sass/_screen.scss */
+  /* line 588, sass/_screen.scss */
   #featured .record {
     margin-bottom: 24px;
     color: #fff;
@@ -1092,18 +1153,18 @@ textarea {
     width: calc(50% - 12px);
   }
 
-  /* line 553, sass/_screen.scss */
+  /* line 603, sass/_screen.scss */
   #featured .record a {
     color: #ffc333;
   }
 
-  /* line 557, sass/_screen.scss */
+  /* line 607, sass/_screen.scss */
   #featured .featured-meta {
     padding: 0 24px;
     max-width: 75%;
   }
 
-  /* line 562, sass/_screen.scss */
+  /* line 612, sass/_screen.scss */
   #featured .featured-meta > * {
     padding: 12px;
     margin: 0;
@@ -1111,17 +1172,17 @@ textarea {
     display: inline-block;
   }
 
-  /* line 569, sass/_screen.scss */
+  /* line 619, sass/_screen.scss */
   #featured .featured-meta h3 {
     background-color: transparent;
   }
 
-  /* line 573, sass/_screen.scss */
+  /* line 623, sass/_screen.scss */
   #featured .featured-meta h3 a {
     color: #000;
   }
 
-  /* line 577, sass/_screen.scss */
+  /* line 627, sass/_screen.scss */
   #featured .record img {
     min-width: 100%;
     min-height: 100%;
@@ -1136,79 +1197,72 @@ textarea {
     transition: opacity .2s ease-in-out;
   }
 
-  /* line 590, sass/_screen.scss */
+  /* line 640, sass/_screen.scss */
   #featured .record:hover img {
     opacity: 1;
   }
 
-  /* line 594, sass/_screen.scss */
+  /* line 644, sass/_screen.scss */
   #intro {
     background-color: #ffc333;
     margin-left: 17.5%;
-    font-size: 19px;
-    line-height: 28px;
     width: 66.66667%;
   }
 
-  /* line 604, sass/_screen.scss */
+  /* line 654, sass/_screen.scss */
   #featured + #intro {
     margin-top: 48px;
   }
 
   /* @group ----- Home - Featured Collections ----- */
-  /* line 610, sass/_screen.scss */
+  /* line 660, sass/_screen.scss */
   div#featured-collection {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 96px 0;
+    margin: 96px 0;
   }
-  /* line 618, sass/_screen.scss */
+  /* line 669, sass/_screen.scss */
   div#featured-collection h1, div#featured-collection h2, div#featured-collection h3 {
     width: 100%;
     clear: both;
   }
-  /* line 624, sass/_screen.scss */
+  /* line 675, sass/_screen.scss */
   div#featured-collection .record {
     height: auto;
     width: 100%;
     margin-bottom: 24px;
     position: relative;
   }
-  /* line 641, sass/_screen.scss */
+  /* line 692, sass/_screen.scss */
   div#featured-collection .record a {
     color: #000;
   }
-  /* line 644, sass/_screen.scss */
+  /* line 695, sass/_screen.scss */
   div#featured-collection .record img {
     min-width: 100%;
   }
-  /* line 655, sass/_screen.scss */
-  div#featured-collection .record .featured-meta {
-    max-width: 75%;
-  }
-  /* line 660, sass/_screen.scss */
+  /* line 711, sass/_screen.scss */
   div#featured-collection .record .featured-meta > * {
-    padding-top: 12px;
     margin: 0;
     display: inline-block;
   }
-  /* line 671, sass/_screen.scss */
+  /* line 718, sass/_screen.scss */
   div#featured-collection .record .featured-meta h3 a {
     color: #000;
     text-decoration: underline;
   }
 
   /* @group ----- Home: Featured Items ----- */
-  /* line 680, sass/_screen.scss */
+  /* line 727, sass/_screen.scss */
   .featured-title {
     width: 100%;
     clear: both;
     text-align: left;
-    padding-bottom: 38px;
+    padding-bottom: 48px;
   }
 
-  /* line 687, sass/_screen.scss */
+  /* line 734, sass/_screen.scss */
   #featured-items {
     -webkit-column-count: 4;
             column-count: 4;
@@ -1217,21 +1271,21 @@ textarea {
   }
 }
 @media screen and (min-width: 993px) and (max-width: 1200px) {
-  /* line 687, sass/_screen.scss */
+  /* line 734, sass/_screen.scss */
   #featured-items {
     -webkit-column-count: 3;
             column-count: 3;
   }
 }
 @media screen and (max-width: 992px) {
-  /* line 687, sass/_screen.scss */
+  /* line 734, sass/_screen.scss */
   #featured-items {
     -webkit-column-count: 2;
             column-count: 2;
   }
 }
 @media screen {
-  /* line 724, sass/_screen.scss */
+  /* line 771, sass/_screen.scss */
   #featured-items .record {
     display: inline-block;
     color: #fff;
@@ -1241,79 +1295,81 @@ textarea {
     margin-right: 0.83333%;
     background-color: #F5F5F5;
   }
-  /* line 743, sass/_screen.scss */
+  /* line 790, sass/_screen.scss */
   #featured-items .record a img {
     width: 100%;
     height: auto;
   }
-  /* line 751, sass/_screen.scss */
+  /* line 798, sass/_screen.scss */
   #featured-items .featured-meta {
     width: 100%;
-    padding: 4px 14px 4px 24px;
+    padding: 0 12px;
   }
-  /* line 754, sass/_screen.scss */
+  /* line 802, sass/_screen.scss */
   #featured-items .featured-meta h3 {
-    margin-top: 9px;
     font-size: 16px;
-    line-height: 21px;
-    font-weight: bold;
+    line-height: 24px;
+    line-height: 24px;
   }
-  /* line 759, sass/_screen.scss */
+  /* line 809, sass/_screen.scss */
   #featured-items .featured-meta h3 a {
     color: #000;
   }
 
-  /* line 770, sass/_screen.scss */
+  /* line 820, sass/_screen.scss */
   #featured-items + #intro {
     margin-top: 48px;
   }
 
   /* @end */
   /* @group ----- Footer ----- */
-  /* line 778, sass/_screen.scss */
+  /* line 828, sass/_screen.scss */
   footer {
     text-align: center;
     padding: 120px 48px 24px;
     clear: both;
   }
-  /* line 782, sass/_screen.scss */
+  /* line 832, sass/_screen.scss */
   footer .to_top {
     display: block;
     text-align: center;
   }
-  /* line 785, sass/_screen.scss */
+  /* line 835, sass/_screen.scss */
   footer .to_top a {
     background-color: #ffc333;
-    font-size: 19px;
   }
-  /* line 790, sass/_screen.scss */
+  /* line 840, sass/_screen.scss */
   footer #custom-footer-text {
     font-size: 24px;
+    text-align: center;
   }
-  /* line 793, sass/_screen.scss */
+  /* line 844, sass/_screen.scss */
   footer #powered_by {
     font-size: 16px;
     text-align: right;
   }
-  /* line 797, sass/_screen.scss */
+  /* line 848, sass/_screen.scss */
   footer .footer-links {
     display: block;
     margin: 0 auto;
+    text-align: center;
   }
-  /* line 800, sass/_screen.scss */
+  /* line 852, sass/_screen.scss */
   footer .footer-links li {
     font-size: 19px;
     list-style-type: none;
     line-height: 26px;
     display: inline-block;
   }
-  /* line 810, sass/_screen.scss */
-  footer .footer-legal li {
-    font-size: 14px;
-    list-style-type: none;
-    line-height: 26px;
+  /* line 861, sass/_screen.scss */
+  footer .footer-legal {
+    text-align: center;
   }
-  /* line 819, sass/_screen.scss */
+  /* line 864, sass/_screen.scss */
+  footer .footer-legal li {
+    list-style-type: none;
+  }
+  /* line 873, sass/_screen.scss */
   footer .footer-legal a,
   footer .footer-links a {
     background-color: #ffc333;
@@ -1321,7 +1377,7 @@ textarea {
 
   /* @end */
   /* @group ----- Browse ----- */
-  /* line 830, sass/_screen.scss */
+  /* line 884, sass/_screen.scss */
   .browse #content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1333,18 +1389,18 @@ textarea {
             justify-content: space-between;
   }
 
-  /* line 837, sass/_screen.scss */
+  /* line 891, sass/_screen.scss */
   .browse h1 {
     width: 100%;
   }
 
-  /* line 841, sass/_screen.scss */
+  /* line 895, sass/_screen.scss */
   #sort-links {
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     font-size: 2.25vmin;
   }
 
-  /* line 846, sass/_screen.scss */
+  /* line 900, sass/_screen.scss */
   #sort-links ul {
     list-style: none;
     padding-left: 0;
@@ -1352,36 +1408,36 @@ textarea {
     margin: 0 0 24px;
   }
 
-  /* line 853, sass/_screen.scss */
+  /* line 907, sass/_screen.scss */
   #sort-links li {
     list-style-type: none;
     display: inline-block;
     margin: 0 3px;
   }
 
-  /* line 859, sass/_screen.scss */
+  /* line 913, sass/_screen.scss */
   #sort-links a {
     background-color: #ffc333;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
     color: #000;
     padding: 6px 12px;
   }
 
-  /* line 866, sass/_screen.scss */
+  /* line 920, sass/_screen.scss */
   #sort-links .asc a:after {
     content: "";
     font-family: "FontAwesome";
     margin-left: 6px;
   }
 
-  /* line 872, sass/_screen.scss */
+  /* line 926, sass/_screen.scss */
   #sort-links .desc a:after {
     content: "";
     font-family: "FontAwesome";
     margin-left: 6px;
   }
 
-  /* line 878, sass/_screen.scss */
+  /* line 932, sass/_screen.scss */
   .records {
     -webkit-column-count: 4;
             column-count: 4;
@@ -1390,27 +1446,27 @@ textarea {
   }
 }
 @media screen and (min-width: 993px) and (max-width: 1200px) {
-  /* line 878, sass/_screen.scss */
+  /* line 932, sass/_screen.scss */
   .records {
     -webkit-column-count: 3;
             column-count: 3;
   }
 }
 @media screen and (max-width: 992px) {
-  /* line 878, sass/_screen.scss */
+  /* line 932, sass/_screen.scss */
   .records {
     -webkit-column-count: 2;
             column-count: 2;
   }
 }
 @media screen {
-  /* line 897, sass/_screen.scss */
+  /* line 951, sass/_screen.scss */
   .records h2 {
     width: 100%;
     font-size: 19px;
     text-align: left;
   }
-  /* line 903, sass/_screen.scss */
+  /* line 957, sass/_screen.scss */
   .records .hentry {
     display: inline-block;
     font-size: 2.25vmin;
@@ -1420,25 +1476,25 @@ textarea {
     text-align: left;
     background-color: #F5F5F5;
   }
-  /* line 914, sass/_screen.scss */
+  /* line 968, sass/_screen.scss */
   .records .hentry a {
     margin: 0 auto;
   }
-  /* line 918, sass/_screen.scss */
+  /* line 972, sass/_screen.scss */
   .records .hentry img {
     width: 100%;
     height: auto;
   }
-  /* line 922, sass/_screen.scss */
+  /* line 976, sass/_screen.scss */
   .records .hentry .view-items-link {
     text-align: left;
   }
-  /* line 926, sass/_screen.scss */
+  /* line 980, sass/_screen.scss */
   .records .hentry .item-info,
   .records .hentry .collection-info {
     margin: 24px;
   }
-  /* line 929, sass/_screen.scss */
+  /* line 983, sass/_screen.scss */
   .records .hentry .item-info h4,
   .records .hentry .collection-info h4 {
     margin: 0;
@@ -1448,53 +1504,55 @@ textarea {
     font-weight: bold;
     margin-top: 24px;
   }
-  /* line 937, sass/_screen.scss */
+  /* line 991, sass/_screen.scss */
   .records .hentry .item-info .date,
   .records .hentry .collection-info .date {
     font-size: 14px;
     line-height: 16px;
   }
-  /* line 942, sass/_screen.scss */
+  /* line 996, sass/_screen.scss */
   .records .hentry .item-info .collection-description,
   .records .hentry .collection-info .collection-description {
     font-size: 16px;
     line-height: 21px;
   }
 
-  /* line 953, sass/_screen.scss */
+  /* line 1007, sass/_screen.scss */
   .browse #outputs {
     width: 100%;
     font-size: 2.25vmin;
   }
 
-  /* line 958, sass/_screen.scss */
+  /* line 1012, sass/_screen.scss */
   .browse .outputs-label:after {
     content: ": ";
   }
 
-  /* line 962, sass/_screen.scss */
+  /* line 1016, sass/_screen.scss */
   .browse #outputs p {
     display: inline-block;
   }
 
   /* @end */
   /* @group ----- Show ----- */
-  /* line 972, sass/_screen.scss */
-  .element-set h2 {
-    font-size: 33px;
+  /* line 1025, sass/_screen.scss */
+  .element-set {
+    width: 67.5%;
+    margin-left: 17.5%;
+    margin-right: 16.66667%;
   }
 
-  /* line 977, sass/_screen.scss */
+  /* line 1031, sass/_screen.scss */
   .chocolat-overlay {
     background-color: #000;
   }
 
-  /* line 981, sass/_screen.scss */
+  /* line 1035, sass/_screen.scss */
   #itemfiles:not(.chocolat-in-fullscreen) .chocolat-close {
     display: none;
   }
 
-  /* line 985, sass/_screen.scss */
+  /* line 1039, sass/_screen.scss */
   #itemfiles-nav {
     margin: 12px 0 48px;
     display: -webkit-box;
@@ -1507,46 +1565,96 @@ textarea {
             justify-content: center;
   }
 
-  /* line 992, sass/_screen.scss */
+  /* line 1046, sass/_screen.scss */
   #itemfiles-nav a {
     height: 72px;
     display: inline-block;
     margin: 0 6px 6px 0;
   }
 
-  /* line 998, sass/_screen.scss */
+  /* line 1052, sass/_screen.scss */
   #itemfiles-nav img {
     height: 100%;
   }
 
-  /* line 1002, sass/_screen.scss */
+  /* line 1055, sass/_screen.scss */
+  .collection,
   .element {
     margin-bottom: 24px;
     vertical-align: top;
     overflow: hidden;
   }
+  /* line 1060, sass/_screen.scss */
+  .collection dt,
+  .element dt {
+    margin: 0;
+    width: 50%;
+    clear: left;
+    float: left;
+    text-align: right;
+    font-family: 'raleway-semibold';
+    font-size: 20px;
+    line-height: 24px;
+    line-height: 24px;
+    padding-right: 3em;
+  }
+  /* line 1071, sass/_screen.scss */
+  .collection dd,
+  .element dd {
+    margin: 0;
+    width: 50%;
+    float: left;
+    font-size: 16px;
+    line-height: 24px;
+    line-height: 24px;
+  }
 
-  /* line 1008, sass/_screen.scss */
-  .element h3 {
-    font-size: 3vmin;
-    width: 25%;
+  /* line 1085, sass/_screen.scss */
+  #item-output-formats h3,
+  #item-citation h3 {
     margin: 0;
     display: block;
     text-align: right;
     float: left;
     word-break: break-word;
+    padding-right: 1em;
+  }
+  /* line 1095, sass/_screen.scss */
+  #item-output-formats .free-element,
+  #item-citation .free-element {
+    float: left;
+    line-height: 48px;
+  }
+  /* line 1101, sass/_screen.scss */
+  #item-output-formats .free-element #output-format-list,
+  #item-citation .free-element #output-format-list {
+    margin: 0;
+    list-style-type: none;
+    line-height: 48px;
+  }
+  /* line 1105, sass/_screen.scss */
+  #item-output-formats .free-element #output-format-list li,
+  #item-citation .free-element #output-format-list li {
+    display: inline-block;
+    margin: 0 .5em;
+  }
+  /* line 1108, sass/_screen.scss */
+  #item-output-formats .free-element #output-format-list li a,
+  #item-citation .free-element #output-format-list li a {
+    background-color: #ffc333;
+    padding: 0 .25em;
   }
 
-  /* line 1018, sass/_screen.scss */
+  /* line 1121, sass/_screen.scss */
   .element-text {
     display: block;
-    width: calc(75% - 24px);
+    width: 100%;
     height: auto;
     text-align: left;
     float: right;
   }
 
-  /* line 1026, sass/_screen.scss */
+  /* line 1129, sass/_screen.scss */
   .element-text:not(:first-of-type) {
     margin-top: 12px;
     border-top-width: 1px;
@@ -1554,29 +1662,25 @@ textarea {
     padding-top: 11px;
   }
 
-  /* line 1031, sass/_screen.scss */
+  /* line 1134, sass/_screen.scss */
   .element-text > p:first-child {
     margin-top: 0;
   }
 
-  /* line 1035, sass/_screen.scss */
+  /* line 1138, sass/_screen.scss */
   .element-text > p:last-child {
     margin-bottom: 0;
   }
 
-  /* line 1039, sass/_screen.scss */
+  /* line 1142, sass/_screen.scss */
   .element-text a {
     background-color: #ffc333;
-  }
-
-  /* line 1043, sass/_screen.scss */
-  .show #output-format-list {
-    margin: 0;
+    padding: 0 .5em;
   }
 
   /* @end */
   /* @group ----- Advanced Item Search ----- */
-  /* line 1051, sass/_screen.scss */
+  /* line 1152, sass/_screen.scss */
   .search-entry {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1587,29 +1691,29 @@ textarea {
     margin-bottom: 12px;
   }
 
-  /* line 1057, sass/_screen.scss */
+  /* line 1158, sass/_screen.scss */
   .search-entry:first-child .advanced-search-joiner {
     display: none;
   }
 
-  /* line 1061, sass/_screen.scss */
+  /* line 1162, sass/_screen.scss */
   .search-entry:not(:first-child) {
     margin-top: 12px;
   }
 
-  /* line 1065, sass/_screen.scss */
+  /* line 1166, sass/_screen.scss */
   .search-entry:only-child > select,
   .search-entry:only-child > input[type="text"] {
     width: 33%;
   }
 
-  /* line 1070, sass/_screen.scss */
+  /* line 1171, sass/_screen.scss */
   .search-entry > select,
   .search-entry > input[type="text"] {
     width: calc((100% - 66px) / 3);
   }
 
-  /* line 1075, sass/_screen.scss */
+  /* line 1176, sass/_screen.scss */
   button.remove_search {
     text-indent: -9999px;
     width: 48px;
@@ -1618,7 +1722,7 @@ textarea {
     color: #fff;
   }
 
-  /* line 1083, sass/_screen.scss */
+  /* line 1184, sass/_screen.scss */
   button.remove_search:after {
     content: "";
     font-family: "FontAwesome";
@@ -1632,13 +1736,13 @@ textarea {
     padding: 6px;
   }
 
-  /* line 1096, sass/_screen.scss */
+  /* line 1197, sass/_screen.scss */
   button.add_search {
     margin-left: calc(33.33333% + 12px);
     font-size: 2.25vmin;
   }
 
-  /* line 1101, sass/_screen.scss */
+  /* line 1202, sass/_screen.scss */
   #search-filters,
   #item-filters {
     border-color: #000;
@@ -1652,7 +1756,7 @@ textarea {
     margin-bottom: 24px;
   }
 
-  /* line 1110, sass/_screen.scss */
+  /* line 1211, sass/_screen.scss */
   #search-filters ul,
   #item-filters ul {
     list-style: none;
@@ -1661,14 +1765,14 @@ textarea {
     font-size: 2.25vmin;
   }
 
-  /* line 1118, sass/_screen.scss */
+  /* line 1219, sass/_screen.scss */
   #search-filters li,
   #item-filters li {
     display: inline-block;
     font-family: "Archivo Black", sans-serif;
     margin-bottom: 12px;
   }
-  /* line 1124, sass/_screen.scss */
+  /* line 1225, sass/_screen.scss */
   #search-filters li:not(:last-of-type):after,
   #item-filters li:not(:last-of-type):after {
     content: "\2022";
@@ -1678,30 +1782,30 @@ textarea {
 
   /* @end */
   /* @group ----- Site-wide Search ----- */
-  /* line 1135, sass/_screen.scss */
+  /* line 1236, sass/_screen.scss */
   #search-filters li ul {
     display: inline-block;
   }
 
-  /* line 1139, sass/_screen.scss */
+  /* line 1240, sass/_screen.scss */
   #search-filters li li {
     text-transform: lowercase;
     margin-bottom: 0;
   }
-  /* line 1143, sass/_screen.scss */
+  /* line 1244, sass/_screen.scss */
   #search-filters li li:not(:last-child):after {
     content: ", ";
     margin: 0 3px 0 0;
   }
 
-  /* line 1149, sass/_screen.scss */
+  /* line 1250, sass/_screen.scss */
   #search-results img {
     height: 72px;
     vertical-align: top;
     margin-right: 12px;
   }
 
-  /* line 1155, sass/_screen.scss */
+  /* line 1256, sass/_screen.scss */
   #search-results td > * {
     display: inline-block;
     vertical-align: middle;
@@ -1709,32 +1813,32 @@ textarea {
 
   /* @end */
   /* @group ----- Exhibits ----- */
-  /* line 1164, sass/_screen.scss */
+  /* line 1265, sass/_screen.scss */
   #exhibit-blocks {
     margin: 0;
   }
 
-  /* line 1168, sass/_screen.scss */
+  /* line 1269, sass/_screen.scss */
   .exhibit-block {
     overflow: hidden;
   }
 
-  /* line 1172, sass/_screen.scss */
+  /* line 1273, sass/_screen.scss */
   .exhibit-block p:only-of-type {
     margin: 0;
   }
 
-  /* line 1176, sass/_screen.scss */
+  /* line 1277, sass/_screen.scss */
   .exhibit-block p:first-of-type {
     margin-top: 0;
   }
 
-  /* line 1180, sass/_screen.scss */
+  /* line 1281, sass/_screen.scss */
   .exhibit-block p:last-of-type {
     margin-bottom: 0;
   }
 
-  /* line 1184, sass/_screen.scss */
+  /* line 1285, sass/_screen.scss */
   #exhibit-pages {
     font-size: 1.8375vmin;
     line-height: 2.75625vmin;
@@ -1743,45 +1847,45 @@ textarea {
     margin: 0 0 24px;
   }
 
-  /* line 1192, sass/_screen.scss */
+  /* line 1293, sass/_screen.scss */
   #exhibit-pages ~ * {
     width: 80%;
     float: right;
     padding-left: 24px;
   }
 
-  /* line 1198, sass/_screen.scss */
+  /* line 1299, sass/_screen.scss */
   #exhibit-pages ~ *:last-child {
     margin-bottom: 24px;
   }
 
-  /* line 1202, sass/_screen.scss */
+  /* line 1303, sass/_screen.scss */
   #exhibit-pages h4 {
     background-color: #000;
     margin: 0;
     padding: 12px;
   }
-  /* line 1207, sass/_screen.scss */
+  /* line 1308, sass/_screen.scss */
   #exhibit-pages h4 a {
     color: #fff;
   }
 
-  /* line 1212, sass/_screen.scss */
+  /* line 1313, sass/_screen.scss */
   #exhibit-pages ul {
     margin: 0;
-    font-family: "Raleway", sans-serif;
+    font-family: "raleway-semibold", sans-serif;
   }
 
-  /* line 1217, sass/_screen.scss */
+  /* line 1318, sass/_screen.scss */
   #exhibit-pages > ul > li:not(:last-child) {
     border-bottom: 2px solid #000;
   }
-  /* line 1220, sass/_screen.scss */
+  /* line 1321, sass/_screen.scss */
   #exhibit-pages > ul > li:not(:last-child) > a {
     padding: calc(6px - 1px) 12px;
   }
 
-  /* line 1225, sass/_screen.scss */
+  /* line 1326, sass/_screen.scss */
   #exhibit-pages li,
   #exhibit-pages a {
     display: block;
@@ -1789,12 +1893,12 @@ textarea {
     position: relative;
   }
 
-  /* line 1232, sass/_screen.scss */
+  /* line 1333, sass/_screen.scss */
   #exhibit-pages li > a {
     padding: 6px 12px;
   }
 
-  /* line 1236, sass/_screen.scss */
+  /* line 1337, sass/_screen.scss */
   #exhibit-pages li.current > a:before,
   #exhibit-pages li.parent.collapsed > a:before {
     font-family: "FontAwesome";
@@ -1804,27 +1908,27 @@ textarea {
     top: 4px;
   }
 
-  /* line 1245, sass/_screen.scss */
+  /* line 1346, sass/_screen.scss */
   #exhibit-pages > ul > li > ul {
     margin-bottom: 3px;
   }
 
-  /* line 1249, sass/_screen.scss */
+  /* line 1350, sass/_screen.scss */
   #exhibit-pages ul ul > li > a {
     padding: 3px 12px 3px 24px;
   }
 
-  /* line 1253, sass/_screen.scss */
+  /* line 1354, sass/_screen.scss */
   #exhibit-pages ul ul ul > li > a {
     padding: 3px 12px 3px 42px;
   }
 
-  /* line 1257, sass/_screen.scss */
+  /* line 1358, sass/_screen.scss */
   #exhibit-pages .has-children {
     padding-right: 24px;
   }
 
-  /* line 1261, sass/_screen.scss */
+  /* line 1362, sass/_screen.scss */
   #exhibit-pages .subpages-toggle {
     border: 0;
     display: block;
@@ -1835,18 +1939,18 @@ textarea {
     margin-top: -29px;
     padding: 6px;
   }
-  /* line 1271, sass/_screen.scss */
+  /* line 1372, sass/_screen.scss */
   #exhibit-pages .subpages-toggle.expanded:before {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }
 
-  /* line 1276, sass/_screen.scss */
+  /* line 1377, sass/_screen.scss */
   #exhibit-pages li li .subpages-toggle {
     margin-top: -26px;
   }
 
-  /* line 1280, sass/_screen.scss */
+  /* line 1381, sass/_screen.scss */
   #exhibit-pages .subpages-toggle:before {
     font-family: "FontAwesome";
     content: "";
@@ -1855,18 +1959,18 @@ textarea {
     display: block;
   }
 
-  /* line 1288, sass/_screen.scss */
+  /* line 1389, sass/_screen.scss */
   #exhibit-pages .collapsed + ul {
     display: none;
   }
 
-  /* line 1292, sass/_screen.scss */
+  /* line 1393, sass/_screen.scss */
   #exhibit-pages ul li.current ul li,
   #exhibit-pages ul li.parent ul li {
     display: block;
   }
 
-  /* line 1297, sass/_screen.scss */
+  /* line 1398, sass/_screen.scss */
   #exhibit-page-navigation {
     background-color: #000;
     color: #ccc;
@@ -1884,7 +1988,7 @@ textarea {
             justify-content: flex-start;
   }
 
-  /* line 1308, sass/_screen.scss */
+  /* line 1409, sass/_screen.scss */
   #exhibit-nav-up {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -1892,19 +1996,19 @@ textarea {
     margin: 0;
   }
 
-  /* line 1313, sass/_screen.scss */
+  /* line 1414, sass/_screen.scss */
   #exhibit-nav-next {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
   }
 
-  /* line 1317, sass/_screen.scss */
+  /* line 1418, sass/_screen.scss */
   #exhibit-nav-next + #exhibit-nav-up:nth-child(2) {
     margin-left: 33%;
   }
 
-  /* line 1321, sass/_screen.scss */
+  /* line 1422, sass/_screen.scss */
   #exhibit-page-navigation a {
     padding: 6px;
     background-color: #ffc333;
@@ -1913,7 +2017,7 @@ textarea {
 
   /* @end */
   /* @group ----- Containers ----- */
-  /* line 1331, sass/_screen.scss */
+  /* line 1432, sass/_screen.scss */
   body.search-open,
   body.menu-open {
     position: fixed;
@@ -1921,13 +2025,13 @@ textarea {
     right: 0;
   }
 
-  /* line 1338, sass/_screen.scss */
+  /* line 1439, sass/_screen.scss */
   #content {
     padding: 120px 48px 0;
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 1338, sass/_screen.scss */
+  /* line 1439, sass/_screen.scss */
   #content {
     margin-left: 8.33333%;
     margin-right: 8.33333%;
@@ -1935,14 +2039,14 @@ textarea {
 }
 
 @media screen {
-  /* line 1347, sass/_screen.scss */
+  /* line 1448, sass/_screen.scss */
   #primary {
     width: 100%;
   }
 
   /* @end */
   /* @group ----- Plugins ----- */
-  /* line 1355, sass/_screen.scss */
+  /* line 1456, sass/_screen.scss */
   #geolocation-browse {
     width: 100%;
   }
