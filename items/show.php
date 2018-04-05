@@ -83,6 +83,13 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif; ?>
 
+<!-- show item relationships -->
+
+<?php
+echo get_specific_plugin_hook_output('ItemRelations', 'public_items_show', array('view' => $this, 'item' => $item));
+?>
+
+
 <!-- The following prints a citation for this item. -->
 <div id="item-citation" class="element">
     <h3><?php echo __('Citation:'); ?></h3>
@@ -93,6 +100,9 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
     <h3><?php echo __('Output Formats:'); ?></h3>
     <div class="free-element"><?php echo output_format_list(); ?></div>
 </div>
+
+
+
 <!--
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 -->
