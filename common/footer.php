@@ -16,6 +16,7 @@
           <li> <a href="https://planeacion.uniandes.edu.co/" target="_blank" > Planeación </a> </li>
           <li> <a href="https://sicuaplus.uniandes.edu.co/webapps/login/" target="_blank" > SICUA </a></li>
         </ul>
+
         <!--
         <ul class="footer-social">
           <li><i class="fa fa-facebook"></i></li>
@@ -40,7 +41,7 @@
 
         <p id="powered_by"><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
         <p class="to_top" >
-          <a href="#top-nav">Back to top</a>
+          <a href="#top-nav"> <?php echo __('Back to top') ?> </a>
         </p>
 
     </div><!-- end footer-content -->

@@ -18,6 +18,9 @@ if ($hasImages) {
     queue_js_file('items-show', 'js');
 }
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
+
+
+
 ?>
 
 
@@ -83,6 +86,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif; ?>
 
+
 <!-- show item relationships -->
 
 <?php
@@ -90,14 +94,16 @@ echo get_specific_plugin_hook_output('ItemRelations', 'public_items_show', array
 ?>
 
 
+
+
 <!-- The following prints a citation for this item. -->
 <div id="item-citation" class="element">
-    <h3><?php echo __('Citation:'); ?></h3>
+    <h3><?php echo __('Citation'); ?></h3>
     <div class="free-element"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
 </div>
 
 <div id="item-output-formats" class="element">
-    <h3><?php echo __('Output Formats:'); ?></h3>
+    <h3><?php echo __('Output Formats'); ?></h3>
     <div class="free-element"><?php echo output_format_list(); ?></div>
 </div>
 

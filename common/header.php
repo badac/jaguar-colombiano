@@ -41,7 +41,7 @@
     <div id="wrap">
 
         <header role="banner">
-        
+
           <?php echo jaguar_header_background(); ?>
 
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
@@ -53,8 +53,8 @@
               <a href="https://facartes.uniandes.edu.co/" target="_blank">
                 <img  id="andes-logo" src="<?php echo img('facartes_web.png','img'); ?>">
               </a>
-            </div>
 
+            </div>
             <div id="header-main">
               <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
               <div id="header-buttons">
@@ -67,11 +67,15 @@
                     <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
                 </div>
 
-
                 <nav id="top-nav" role="navigation" class="closed">
                     <button type="button" class="menu-toggle" aria-label="<?php echo __('Toggle menu'); ?>"></button>
                     <?php echo public_nav_main(); ?>
                 </nav>
+                <?php if (plugin_is_active('LocaleSwitcher')):  ?>
+                  <div id="lang-switch">
+                    <?php echo $this->localeSwitcher(); ?>
+                  </div>
+                <?php endif ?>
               </div>
 
             </div>

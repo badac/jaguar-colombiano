@@ -20,7 +20,7 @@
 
 <!-- Featured Collection -->
 <?php if (get_theme_option('Display Featured Collection') !== '0' && count(get_random_featured_collection()) > 0): ?>
-  <h1 class="section-title" >Featured Collection</h1>
+  <h1 class="section-title" > <?php echo __('Featured Collection') ?> </h1>
     <div id="featured-collection" class="layout-<?php echo thedaily_featured_count(); ?>">
     <?php echo random_featured_collection(0); ?>
 </div>
@@ -30,7 +30,7 @@
 <!-- Featured Item -->
 
 <?php if (get_theme_option('Display Featured Item') !== '0' && count(get_random_featured_items()) > 0): ?>
-  <h1  class="section-title" >Featured Items</h1>
+  <h1  class="section-title" >   <?php echo __('Featured Item') ?> </h1>
   <div id="featured-items" class="layout-<?php echo thedaily_featured_count(); ?>">
       <?php echo random_featured_items(0); ?>
   </div>

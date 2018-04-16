@@ -402,14 +402,50 @@ header a {
   #header-buttons{
 
     float:right;
+    display: flex;
+    align-items: center;
     #search-container{
       float:left;
     }
     #top-nav{
-      float:right;
+      float:left;
 
     }
+    #lang-switch{
+      //margin-left: auto;
+      display:block;
+      float: right;
+    }
+
   }
+
+}
+
+.locale-switcher{
+  .flag-icon{
+    background-image: none;
+    border-style: none !important;
+    color: white;
+    &.active{
+      text-decoration: underline;
+      box-shadow: none !important;
+    }
+  }
+
+  .flag-icon-us{
+    &:before{
+      content: 'en';
+      font-family: 'raleway-semibold';
+    }
+  }
+
+  .flag-icon-es{
+    &:before{
+      content: 'es';
+      font-family: 'raleway-semibold';
+    }
+  }
+
 
 }
 
