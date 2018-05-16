@@ -40,6 +40,8 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
     <?php endif; ?>
 </div><!-- end collection-items -->
 
+<?php echo pagination_links(); ?>
+
 <?php fire_plugin_hook('public_collections_show', array('view' => $this, 'collection' => $collection)); ?>
 
 <?php echo foot(); ?>
