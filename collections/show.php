@@ -40,8 +40,16 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
     <?php endif; ?>
 </div><!-- end collection-items -->
 
-<?php echo pagination_links(); ?>
+<div class="block-section-bottom">
+  <div class="pagination center-text margin-top-md">
+    <?php echo link_to_items_browse(__('Ver todas la obras de la colección %s', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?>
+  </div>
+</div>
 
-<?php fire_plugin_hook('public_collections_show', array('view' => $this, 'collection' => $collection)); ?>
+
+
+
+
+
 
 <?php echo foot(); ?>

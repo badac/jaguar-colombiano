@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $heading-font;
     font-weight: normal;
 }
+
 /*
 h1 {
     font-size: 1.75 * $scalable-font-size;
@@ -101,7 +102,29 @@ ul {
     text-justify: distribute;
 
 }
+/* -- Utilities --*/
 
+.center-block{
+  margin: 0 auto;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.margin-top-md{
+  margin-top: 2em;
+}
+
+.block-section-bottom{
+  border-color: #000;
+  @include trailing-border(1px, 0, $base-font-size, solid);
+  @include leading-border(3px, .5, $base-font-size, solid);
+  width: 100%;
+  margin-bottom: rhythm();
+}
+
+/*-- End Utilities --*/
     /* @group ----- Form Elements ----- */
 
     fieldset {
@@ -971,7 +994,7 @@ footer {
     //justify-content: flex-start;
     //align-content: flex-start;
     //width: 100%;
-    //margin: rhythm() 0 0;
+    margin: rhythm(2) 0 rhythm(2);
     @media screen and (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-lg){
       column-count: 3;
     }
@@ -1062,6 +1085,7 @@ footer {
   width: span(8) + gutter();
   margin-left: span(2) + gutter();
   margin-right: span(2);
+  margin-bottom: rhythm(4);
 }
 
 .chocolat-overlay {
