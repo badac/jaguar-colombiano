@@ -48,7 +48,7 @@
 
             <div id="header-logos">
               <a href="https://badac.uniandes.edu.co" target="_blank">
-                <img id="badac-logo" src="<?php echo img('logowebblanco-01.png','img'); ?>">
+                <img id="badac-logo" src="<?php echo img('logo-badac-web-blanco-sm.png','img'); ?>">
               </a>
               <a href="https://facartes.uniandes.edu.co/" target="_blank">
                 <img  id="andes-logo" src="<?php echo img('facartes_web.png','img'); ?>">
