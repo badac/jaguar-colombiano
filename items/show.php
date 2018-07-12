@@ -19,20 +19,21 @@ if ($hasImages) {
 }
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 
-
-
 ?>
 
 
 <!-- The following returns all of the files associated with an item. -->
 <?php if ($hasImages): ?>
-<div id="itemfiles" style="width: 100%; height: 50vh; background: #E0E0E0; margin:auto;"></div>
+<div id="itemfiles" style="width: 100%; height: 70vh; background: #E0E0E0; margin:auto;"></div>
+
 <div id="itemfiles-nav">
+
     <?php foreach ($images as $image): ?>
         <a href="<?php echo $image->getWebPath('original'); ?>" class="chocolat-image">
             <?php echo file_image('square_thumbnail', array(), $image); ?>
         </a>
     <?php endforeach; ?>
+
 </div>
 <?php endif; ?>
 
@@ -41,50 +42,50 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         <?php echo file_markup($nonImage); ?>
     <?php endforeach; ?>
 <?php endif; ?>
+<div class="data-sheet">
+  <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
-<h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
+  <?php echo all_element_texts('item', array('partial','common/record-metadata.php')); ?>
 
-<?php echo all_element_texts('item', array('partial','common/record-metadata.php')); ?>
-
-
-<!-- If the item belongs to a collection, the following creates a link to that collection. -->
-<?php if (metadata('item', 'Collection Name')): ?>
-<div id="collection">
-    <dl class="element">
+  <!-- If the item belongs to a collection, the following creates a link to that collection. -->
+  <?php if (metadata('item', 'Collection Name')): ?>
+  <div id="collection">
+      <dl class="element">
+        <dt>
+          <?php echo __('Collection'); ?>
+        </dt>
+        <dd>
+          <div class="element-text">
+            <?php echo link_to_collection_for_item(); ?>
+          </div>
+        </dd>
+      </dl>
+  </div>
+  <?php endif; ?>
+  <!-- The following prints a list of all tags associated with the item -->
+  <?php if (metadata('item', 'has tags')): ?>
+  <div id="item-tags" class="element">
+    <dl class="element" id="item-tags">
       <dt>
-        <?php echo __('Collection'); ?>
+        <?php echo __('Tags'); ?>
       </dt>
       <dd>
-        <div class="element-text">
-          <?php echo link_to_collection_for_item(); ?>
-        </div>
+        <div class="element-text"><?php echo tag_string('item'); ?></div>
       </dd>
     </dl>
-</div>
-<?php endif; ?>
+  </div>
+  <?php endif;?>
 
-<!-- The following prints a list of all tags associated with the item -->
-<?php if (metadata('item', 'has tags')): ?>
-<div id="item-tags" class="element">
-  <dl class="element" id="item-tags">
-    <dt>
-      <?php echo __('Tags'); ?>
-    </dt>
-    <dd>
-      <div class="element-text"><?php echo tag_string('item'); ?></div>
-    </dd>
-  </dl>
+  <?php if ((count($nonImages) > 0) && get_theme_option('other_media') == 1): ?>
+  <div id="other-media" class="element">
+      <h3>Other Media</h3>
+      <?php foreach ($nonImages as $nonImage): ?>
+      <div class="element-text"><a href="<?php echo file_display_url($nonImage, 'original'); ?>"><?php echo metadata($nonImage, 'display_title'); ?> - <?php echo $nonImage->mime_type; ?></a></div>
+      <?php endforeach; ?>
+  </div>
+  <?php endif; ?>
 </div>
-<?php endif;?>
 
-<?php if ((count($nonImages) > 0) && get_theme_option('other_media') == 1): ?>
-<div id="other-media" class="element">
-    <h3>Other Media</h3>
-    <?php foreach ($nonImages as $nonImage): ?>
-    <div class="element-text"><a href="<?php echo file_display_url($nonImage, 'original'); ?>"><?php echo metadata($nonImage, 'display_title'); ?> - <?php echo $nonImage->mime_type; ?></a></div>
-    <?php endforeach; ?>
-</div>
-<?php endif; ?>
 
 
 <!-- show item relationships -->
@@ -94,29 +95,27 @@ echo get_specific_plugin_hook_output('ItemRelations', 'public_items_show', array
 ?>
 
 
+<div class="extra-data">
+  <!-- The following prints a citation for this item. -->
+  <div id="item-citation" class="element">
+      <h3><?php echo __('Citation'); ?></h3>
+      <div class="free-element"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
+  </div>
 
+  <div id="item-output-formats" class="element">
+      <h3><?php echo __('Output Formats'); ?></h3>
+      <div class="free-element"><?php echo output_format_list(); ?></div>
+  </div>
 
-<!-- The following prints a citation for this item. -->
-<div id="item-citation" class="element">
-    <h3><?php echo __('Citation'); ?></h3>
-    <div class="free-element"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
 </div>
 
-<div id="item-output-formats" class="element">
-    <h3><?php echo __('Output Formats'); ?></h3>
-    <div class="free-element"><?php echo output_format_list(); ?></div>
-</div>
 
-
-
-<!--
-<?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
--->
 <nav>
 <ul class="item-pagination navigation">
     <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
     <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
 </ul>
 </nav>
+
 
 <?php echo foot(); ?>

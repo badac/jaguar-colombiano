@@ -1,14 +1,14 @@
 (function($) {
     $(document).ready(function(){
         var inContainer = $("#itemfiles-nav").Chocolat({
-        imageSize: "default",
+        imageSize: "contain",
         loop: true,
         container: "#itemfiles",
         }).data("chocolat");
-    
+
         inContainer.api().open()
         inContainer.api().getElem("overlay").off("click.chocolat");
-    
+
         $(document).off("keydown.chocolat").on("keydown.chocolat", function(e) {
             if (inContainer.api().get("initialized")) {
                 if (e.keyCode == 37) {
