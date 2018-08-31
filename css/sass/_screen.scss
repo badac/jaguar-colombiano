@@ -472,13 +472,15 @@ nav li {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: rgba(0,0,0,.9);
+  //background-color: rgba(0,0,0,.9);
+  background-color: rgba(255,255,255,.9);
   z-index: 9999;
   margin: 0;
   padding: rhythm(2);
   text-align: left;
   height: calc(100vh - #{rhythm(2)});
-  color: #fff;
+  //color: #fff;
+  color: #000;
   vertical-align: top;
   order: 1;
 }
@@ -505,7 +507,13 @@ nav li {
 }
 
 #top-nav > ul > li > a {
-  color: $primary-color;
+  //color: $primary-color;
+  color: #000;
+}
+
+#top-nav > ul > li > a {
+  //color: $primary-color;
+  color: #000;
 }
 
 #top-nav > ul > li li {
@@ -591,6 +599,7 @@ nav li {
       justify-content: space-between;
       //min-height: 512px;
       min-height: rhythm(21);
+
   }
 
   header > * {
@@ -652,6 +661,26 @@ nav li {
             width: auto;
             vertical-align: bottom;
         }
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+
+
+      #site-title {
+          //font-family: $heading-font;
+          font-family: "raleway-semibold";
+          //margin-right: auto;
+          margin-top:rhythm(.1);
+          padding: 0;
+          font-size: rhythm(1.2);
+          line-height: 1.2;
+          float:left;
+          font-weight: bold;
+          img {
+              max-height: rhythm(2);
+              width: auto;
+              vertical-align: bottom;
+          }
+      }
     }
     #header-buttons{
 
@@ -940,9 +969,6 @@ div#featured-collection {
   }
 
 
-  @media screen and ( max-width: $breakpoint-sm){
-    column-count: 2;
-  }
 
   column-count: 4;
   column-gap: 1em;
@@ -1117,16 +1143,14 @@ footer {
     //flex-wrap: wrap;
     //justify-content: flex-start;
     //align-content: flex-start;
-    //width: 100%;
-    margin: rhythm(2) 0 rhythm(2);
+    width: 100%;
+    //margin: rhythm(2) 0 rhythm(2);
     @media screen and (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-lg){
       column-count: 3;
     }
 
 
-    @media screen and ( max-width: $breakpoint-sm){
-      column-count: 2;
-    }
+
 
     column-count: 4;
     column-gap: 1em;
@@ -1144,9 +1168,10 @@ footer {
         line-height: .75 * $scalable-line-height;
         //width: calc(25% - #{rhythm()});
         width: 100%;
-        margin: rhythm() rhythm() rhythm(1) 0;
+        //margin: rhythm() rhythm() rhythm(1) 0;
         text-align: left;
-        background-color: $gris-claro;
+        //background-color: $gris-claro;
+        border-bottom: 1px solid $gris-medio-claro;
 
         a{
           margin: 0 auto;
@@ -1181,8 +1206,83 @@ footer {
             line-height: rhythm(.9);
           }
         }
-
   }
+
+}
+.collection.records {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    //align-content: flex-start;
+    //width: 100%;
+    flex-direction: row;
+    margin: rhythm(2) 0 rhythm(2);
+    @media screen and (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-lg){
+      column-count: 3;
+    }
+
+
+    @media screen and ( max-width: $breakpoint-sm){
+      column-count: 1;
+    }
+
+    column-count: 4;
+    column-gap: 1em;
+
+    h2 {
+        width: 100%;
+        font-size: rhythm(.8);
+        text-align: left;
+    }
+
+    .hentry {
+        //display: inline-block;
+
+        font-size: .75 * $scalable-font-size;
+        line-height: .75 * $scalable-line-height;
+        width: calc(25% - #{rhythm()});
+        //width: 100%;
+        //width: 30%;
+        margin: rhythm() rhythm() rhythm(1) 0;
+        text-align: left;
+        //background-color: $gris-claro;
+        border-bottom: 1px solid $gris-medio-claro;
+
+        a{
+          margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .view-items-link{
+          text-align: left;
+        }
+
+        .item-info,
+        .collection-info{
+          margin: rhythm(1);
+          h4 {
+            margin:0;
+            text-align: left;
+            font-size: rhythm(.7);
+            line-height: rhythm(.9);
+            font-weight: bold;
+            margin-top: rhythm();
+          }
+          .date{
+            font-size: rhythm(.6);
+            line-height: rhythm(.7);
+
+          }
+          .collection-description{
+            font-size: rhythm(.7);
+            line-height: rhythm(.9);
+          }
+        }
+  }
+
 }
 
 
@@ -1206,13 +1306,20 @@ footer {
 /* @group ----- Show ----- */
 
 
-.show{
+.items.show{
   #content{
     margin-left: span(3) + gutter();
     margin-right: span(3);
     margin-bottom: rhythm(4);  }
 }
 
+
+.collections.show{
+  #content{
+    margin-left: span(1) + gutter();
+    margin-right: span(1);
+    margin-bottom: rhythm(4);  }
+}
 
 .data-sheet,
 .extra-data{

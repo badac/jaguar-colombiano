@@ -19,16 +19,15 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
                 <?php echo link_to_item(item_image('thumbnail')); ?>
             </div>
             <?php endif; ?>
-
-            <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h4>
-
-            <?php if ($creator = metadata('item', array('Dublin Core', 'Creator'))): ?>
-            <span class="creator"><?php echo $creator; ?></span>
-            <?php endif; ?>
-            <?php if ($date = metadata('item', array('Dublin Core', 'Date'))): ?>
-            <span class="date"><?php echo $date; ?></span>
-            <?php endif; ?>
-
+            <div class="item-info">
+              <h4>
+                <span class="title"><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></span>
+              </h4>
+              <?php if ($date = metadata('item', array('Dublin Core', 'Date'))): ?>
+                <span class="date"><?php echo $date; ?></span>
+              <?php endif; ?>
+            </div>
+            
             <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
 
             </div><!-- end class="item-meta" -->

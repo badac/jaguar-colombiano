@@ -155,7 +155,8 @@ div#featured {
 .records .hentry {
     font-size: 1.5 * $scalable-font-size;
     line-height: 1.5 * $scalable-line-height;
-    width: calc(50% - #{rhythm()});
+    width: 100%;
+
 }
 
 .collection.hentry h2 {
@@ -213,4 +214,203 @@ button.add_search {
     padding-left: 0;
 }
 
+
+
+header {
+
+      padding: rhythm(.24) rhythm(2);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      //min-height: 512px;
+      min-height: rhythm(21);
+
+  }
+
+  @media screen and (max-width: $breakpoint-sm ) {
+
+    header {
+
+        padding: rhythm(.24) rhythm(.8);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        //min-height: 512px;
+        min-height: rhythm(6);
+
+    }
+
+  }
+
+  header > * {
+      vertical-align: top;
+  }
+
+  header a {
+      color: #fff;
+      //color: #000;
+  }
+
+  #header-image {
+      width: 100%;
+      margin: 0;
+      display: block;
+
+  }
+
+  #header-image img {
+      width: 100%;
+      height: auto;
+      vertical-align: bottom;
+  }
+
+  #header-logos{
+    //align-items: flex-start;
+    width:100%;
+    margin: rhythm(.4) 0;
+    img{
+      max-height: 50px;
+    }
+    #badac-logo{
+      float:left;
+    }
+    #andes-logo{
+      margin-left: auto;
+      float: right;
+    }
+
+  }
+
+  #header-main{
+    //display: flex;
+    //flex: row;
+    margin: rhythm(.4) 0;
+    //width: 100%;
+
+
+      #site-title {
+          //font-family: $heading-font;
+          font-family: "raleway-semibold";
+          //margin-right: auto;
+          margin-top:rhythm(.1);
+          padding: 0;
+          font-size: rhythm(1.2);
+          line-height: 1.2;
+          float:left;
+          font-weight: bold;
+          img {
+              max-height: rhythm(2);
+              width: auto;
+              vertical-align: bottom;
+          }
+      }
+    #header-buttons{
+
+      float:left;
+      display: flex;
+      align-items: center;
+      margin-top: rhythm(1);
+      #search-container{
+        float:left;
+      }
+      #top-nav{
+        float:left;
+
+      }
+      #lang-switch{
+        //margin-left: auto;
+        display:block;
+        float: right;
+      }
+
+    }
+
+  }
+
+  #featured-items  {
+    column-count: 1;
+  }
+
+
+  .collection.records {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      //align-content: flex-start;
+      //width: 100%;
+      flex-direction: row;
+      margin: rhythm(2) 0 rhythm(2);
+      @media screen and (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-lg){
+        column-count: 3;
+      }
+
+
+      @media screen and ( max-width: $breakpoint-sm){
+        column-count: 1;
+      }
+
+      column-count: 4;
+      column-gap: 1em;
+
+      h2 {
+          width: 100%;
+          font-size: rhythm(.8);
+          text-align: left;
+      }
+
+      .hentry {
+          //display: inline-block;
+
+          font-size: .75 * $scalable-font-size;
+          line-height: .75 * $scalable-line-height;
+          //width: calc(25% - #{rhythm()});
+          width: 100%;
+          //width: 30%;
+          margin: rhythm() rhythm() rhythm(1) 0;
+          text-align: left;
+          //background-color: $gris-claro;
+          border-bottom: 1px solid $gris-medio-claro;
+
+          a{
+            margin: 0 auto;
+          }
+
+          img {
+              width: 100%;
+              height: auto;
+          }
+          .view-items-link{
+            text-align: left;
+          }
+
+          .item-info,
+          .collection-info{
+            margin: rhythm(1);
+            h4 {
+              margin:0;
+              text-align: left;
+              font-size: rhythm(.7);
+              line-height: rhythm(.9);
+              font-weight: bold;
+              margin-top: rhythm();
+            }
+            .date{
+              font-size: rhythm(.6);
+              line-height: rhythm(.7);
+
+            }
+            .collection-description{
+              font-size: rhythm(.7);
+              line-height: rhythm(.9);
+            }
+          }
+    }
+
+  }
+
+  .records{
+    column-count: 1;
+  }
 /* @end */

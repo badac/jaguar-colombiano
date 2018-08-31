@@ -48,28 +48,33 @@
 
             <div id="header-logos">
               <a href="https://badac.uniandes.edu.co" target="_blank">
-                <img id="badac-logo" src="<?php echo img('logo-badac-web-blanco-sm.png','img'); ?>">
+                <img id="badac-logo" src="<?php echo img('badac-uniandes-blanco-sm.png','img'); ?>">
               </a>
+              <!--
               <a href="https://facartes.uniandes.edu.co/" target="_blank">
                 <img  id="andes-logo" src="<?php echo img('facartes_web.png','img'); ?>">
               </a>
-
+            -->
             </div>
+
             <div id="header-main">
               <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
               <div id="header-buttons">
-                <div id="search-container" role="search">
-                    <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-                    <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                    <?php else: ?>
-                    <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                    <?php endif; ?>
-                    <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
-                </div>
+
 
                 <nav id="top-nav" role="navigation" class="closed">
                     <button type="button" class="menu-toggle" aria-label="<?php echo __('Toggle menu'); ?>"></button>
                     <?php echo public_nav_main(); ?>
+
+                    <div id="search-container" role="search">
+                        <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+                        <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
+                        <?php else: ?>
+                        <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
+                        <?php endif; ?>
+                        <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+                    </div>
+
                 </nav>
                 <?php if (plugin_is_active('LocaleSwitcher')):  ?>
                   <div id="lang-switch">

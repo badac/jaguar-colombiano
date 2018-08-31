@@ -14,9 +14,12 @@ $sortLinks[__('Date Added')] = 'added';
     <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
 </div>
 
-<div class="records">
+<div class="collection records">
 <?php foreach (loop('collections') as $collection): ?>
-    <div class="collection hentry">
+  <?php if (metadata('collection', array('Dublin Core', 'Title')) != 'Referentes' ): ?>
+
+    <div class="hentry">
+
 
 
         <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
@@ -46,8 +49,8 @@ $sortLinks[__('Date Added')] = 'added';
           <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
         </div>
 
-
     </div><!-- end class="collection" -->
+    <?php endif; ?>
 <?php endforeach; ?>
 </div>
 
