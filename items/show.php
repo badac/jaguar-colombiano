@@ -96,16 +96,22 @@ echo get_specific_plugin_hook_output('ItemRelations', 'public_items_show', array
 
 
 <div class="extra-data">
-  <!-- The following prints a citation for this item. -->
-  <div id="item-citation" class="element">
-      <h3><?php echo __('Citation'); ?></h3>
-      <div class="free-element"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
+  <div class="extra-data-header">
+    <h3>Detalles</h3>
+  </div>
+  <div class="extra-data-content">
+    <!-- The following prints a citation for this item. -->
+    <div id="item-citation" class="element">
+        <h4><?php echo __('Citation'); ?></h4>
+        <div class="free-element"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
+    </div>
+
+    <div id="item-output-formats" class="element">
+        <h4><?php echo __('Output Formats'); ?></h4>
+        <div class="free-element"><?php echo output_format_list(); ?></div>
+    </div>
   </div>
 
-  <div id="item-output-formats" class="element">
-      <h3><?php echo __('Output Formats'); ?></h3>
-      <div class="free-element"><?php echo output_format_list(); ?></div>
-  </div>
 
 </div>
 

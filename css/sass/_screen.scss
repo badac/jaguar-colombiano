@@ -850,7 +850,8 @@ div#featured {
 }
 
 #intro {
-    background-color: $primary-color;
+    //background-color: $primary-color;
+    background-color: white;
     //margin-top: rhythm(2);
     margin-left: span(2) + gutter();
     //padding: rhythm(2);
@@ -944,6 +945,7 @@ div#featured-collection {
   //flex-wrap: wrap;
   //flex-direction: column;
   //justify-content: flex-start;
+
   //position: relative;
   //display: block;
   //padding: rhythm(4) 0;
@@ -1062,6 +1064,7 @@ footer {
         line-height: rhythm(1.1);
         display: inline-block;
         padding: 0 rhythm(.5);
+        margin-top: 1.2em;
       }
     }
 
@@ -1145,12 +1148,6 @@ footer {
     //align-content: flex-start;
     width: 100%;
     //margin: rhythm(2) 0 rhythm(2);
-    @media screen and (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-lg){
-      column-count: 3;
-    }
-
-
-
 
     column-count: 4;
     column-gap: 1em;
@@ -1308,8 +1305,8 @@ footer {
 
 .items.show{
   #content{
-    margin-left: span(3) + gutter();
-    margin-right: span(3);
+    //margin-left: span(1) + gutter();
+    //margin-right: span(1);
     margin-bottom: rhythm(4);  }
 }
 

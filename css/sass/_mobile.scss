@@ -68,6 +68,15 @@ h4 {
     padding: rhythm() rhythm() 0;
 }
 
+.items.show{
+  #content{
+    dd{
+      clear: both;
+      margin-top: .8em;
+    }
+  }
+}
+
 /* @end */
 
 /* @group ----- Navigation ----- */
@@ -123,6 +132,12 @@ header h1 {
 
 footer {
     padding: 0 rhythm() rhythm();
+    .footer-links{
+      li{
+        display: block;
+        margin-top: 1.2em;    
+      }
+    }
 }
 
 /* @end */
@@ -178,6 +193,12 @@ div#featured {
 .element-text:not(:first-of-type) {
     margin-top: rhythm(.25);
     @include leading-border(1px, .25, $base-font-size, solid);
+}
+
+#output-format-list{
+  li{
+    display: block !important;
+  }
 }
 
 /* @end */
