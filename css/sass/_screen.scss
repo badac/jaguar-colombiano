@@ -104,6 +104,11 @@ ul {
     text-justify: distribute;
 
 }
+
+strong{
+  font-family: $heading-font;
+  font-weight: 800;
+}
 /* -- Utilities --*/
 
 .center-block{
@@ -663,6 +668,7 @@ nav li {
             max-height: rhythm(2);
             width: auto;
             vertical-align: bottom;
+
         }
     }
     @media screen and (max-width: $breakpoint-sm) {
@@ -805,7 +811,8 @@ div#featured {
     //align-content: center;
     //align-items: center;
     //justify-content: center;
-    background-color: #e7e7e7;
+    //background-color: #e7e7e7;
+    background-color: transparent;
     padding: rhythm();
     //min-height: 30vh;
     width: calc(50% - #{rhythm(.5)});
@@ -816,14 +823,15 @@ div#featured {
 }
 
 #featured .featured-meta {
-    padding: 0 rhythm();
+    //padding: 0 rhythm();
+    margin: rhythm(1);
     max-width: 75%;
 }
 
 #featured .featured-meta > * {
-    padding: rhythm(.5);
-    margin: 0;
-    background-color: #000;
+    //padding: rhythm(.5);
+    //margin: 0;
+    //background-color: #000;
     display: inline-block;
 }
 
@@ -831,7 +839,8 @@ div#featured {
     background-color: transparent;
 }
 
-#featured .featured-meta h3 a {
+#featured .featured-meta
+h3, a,.date {
     color: #000;
 }
 
@@ -856,11 +865,13 @@ div#featured {
     //background-color: $primary-color;
     background-color: white;
     //margin-top: rhythm(2);
-    margin-left: span(2) + gutter();
-    //padding: rhythm(2);
-    //font-size: rhythm(.8);
-    //line-height: rhythm(1);
+    margin: 0 0 rhythm(6) span(2)+gutter();
     width: span(8);
+    //padding: rhythm(2);
+    p{
+      font-size: rhythm(1);
+      line-height: rhythm(2);
+    }
 }
 
 #featured + #intro {
@@ -984,7 +995,7 @@ div#featured-collection {
 
     //@include span(3 of 12);
     color: #fff;
-    margin-bottom: rhythm();
+    margin-bottom: rhythm(2);
     width: 100%;
     //flex: 1 1 400px;
     height: auto;
@@ -994,7 +1005,9 @@ div#featured-collection {
     //padding-right: gutter();
     margin-right: gutter();
     //clear: none;
-    background-color: $gris-claro;
+    //background-color: $gris-claro;
+    background-color: transparent;
+    border-bottom: 1px solid $gris-medio-claro;
     a{
       //width: 100%;
       img {
@@ -1008,7 +1021,7 @@ div#featured-collection {
   .featured-meta {
     width: 100%;
     //padding: rhythm(.2) rhythm(.6) rhythm(.2) rhythm(1);
-    padding: 0 rhythm(.5);
+    padding: rhythm(.5);
     h3{
       //margin-top: rhythm(.4);
       //font-size: rhythm(.7);
@@ -1173,6 +1186,7 @@ footer {
         text-align: left;
         //background-color: $gris-claro;
         border-bottom: 1px solid $gris-medio-claro;
+        margin-bottom: rhythm(2);
 
         a{
           margin: 0 auto;
@@ -1187,9 +1201,10 @@ footer {
         }
 
         .item-info,
+        .featured-meta,
         .collection-info{
           margin: rhythm(1);
-          h4 {
+          h4, h3 {
             margin:0;
             text-align: left;
             font-size: rhythm(.7);
@@ -1200,7 +1215,7 @@ footer {
           .date{
             font-size: rhythm(.6);
             line-height: rhythm(.7);
-
+            color: #000;
           }
           .collection-description{
             font-size: rhythm(.7);

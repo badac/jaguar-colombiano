@@ -30,7 +30,6 @@
 <!-- Featured Item -->
 
 <?php if (get_theme_option('Display Featured Item') !== '0' && count(get_random_featured_items()) > 0): ?>
-  <h1  class="section-title" >   <?php echo __('Featured Item') ?> </h1>
   <div id="featured-items" class="layout-<?php echo thedaily_featured_count(); ?>">
       <?php echo random_featured_items(0); ?>
   </div>
