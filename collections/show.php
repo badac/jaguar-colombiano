@@ -6,8 +6,10 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
 
 <h1><?php echo $collectionTitle; ?></h1>
 
-
+<?php /*
 <h2><?php echo link_to_items_browse(__('Items in the %s Collection', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
+*/ ?>
+
 <div id="collection-items" class="records">
     <?php if (metadata('collection', 'total_items') > 0): ?>
         <?php foreach (loop('items') as $item): ?>
@@ -27,7 +29,7 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
                 <span class="date"><?php echo $date; ?></span>
               <?php endif; ?>
             </div>
-            
+
             <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
 
             </div><!-- end class="item-meta" -->

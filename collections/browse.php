@@ -3,7 +3,13 @@ $pageTitle = __('Browse Collections');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 
+<?php /*
 <h2 class="browse-title"><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h2>
+*/ ?>
+
+<h2 class="browse-title">  Obra </h2>
+
+
 <?php echo pagination_links(); ?>
 
 <?php
@@ -17,7 +23,6 @@ $sortLinks[__('Date Added')] = 'added';
 <div class="collection records">
 <?php foreach (loop('collections') as $collection): ?>
   <?php if (metadata('collection', array('Dublin Core', 'Title')) != 'Referentes' ): ?>
-
     <div class="hentry">
 
         <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
@@ -48,6 +53,48 @@ $sortLinks[__('Date Added')] = 'added';
         </div>
 
     </div><!-- end class="collection" -->
+
+    <?php endif; ?>
+<?php endforeach; ?>
+</div>
+
+<!-- Referentes -->
+
+<h2>Referentes</h2>
+<div class="collection records">
+<?php foreach (loop('collections') as $collection): ?>
+  <?php if (metadata('collection', array('Dublin Core', 'Title')) == 'Referentes' ): ?>
+    <div class="hentry">
+
+        <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
+            <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
+        <?php endif; ?>
+
+        <div class="collection-info">
+          <h4><?php echo link_to_collection(); ?></h4>
+
+          <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
+          <div class="collection-description">
+              <?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?>
+          </div>
+          <?php endif; ?>
+
+          <?php if ($collection->hasContributor()): ?>
+          <div class="collection-contributors">
+              <p>
+              <strong><?php echo __('Contributors'); ?>:</strong>
+              <?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('all'=>true, 'delimiter'=>', ')); ?>
+              </p>
+          </div>
+          <?php endif; ?>
+
+          <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata('collection', array('Dublin Core', 'Title'))), array('collection' => metadata('collection', 'id'))); ?></p>
+
+          <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
+        </div>
+
+    </div><!-- end class="collection" -->
+
     <?php endif; ?>
 <?php endforeach; ?>
 </div>
