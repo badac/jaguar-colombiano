@@ -483,11 +483,13 @@ nav li {
   margin: 0;
   padding: rhythm(2);
   text-align: left;
-  height: calc(100vh - #{rhythm(2)});
+  //height: calc(100vh - #{rhythm(2)});
+  height: auto;
   //color: #fff;
   color: #000;
   vertical-align: top;
   order: 1;
+  border-bottom: 3px solid black;
 }
 
 #top-nav > ul {
@@ -549,7 +551,8 @@ nav li {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 20vh;
+  //padding-top: 20vh;
+  padding-top: rhythm(2);
 }
 
 #search-form input[type="text"] {
@@ -585,16 +588,24 @@ nav li {
   margin: 0;
   line-height: 0;
   order: 2;
+  *{
+    color: #000;
+  }
 }
 
 #advanced-form {
+  padding-top: rhythm(2);
   order: 3;
   display: flex;
+  font-size: $h6-fz;
 }
 
 #advanced-form fieldset,
 #advanced-form p:last-child {
   margin: 0 rhythm();
+  a{
+    color: #000;
+  }
 }
 
 #home{
@@ -715,7 +726,9 @@ nav li {
 }
 
 .show,
-.browse{
+.browse,
+.advanced-search,
+.page{
   header {
 
       padding: rhythm(.12) rhythm(2);
@@ -1806,6 +1819,7 @@ body.menu-open {
     position: fixed;
     left: 0;
     right: 0;
+    overflow-y: visible;
 }
 
 #content {
